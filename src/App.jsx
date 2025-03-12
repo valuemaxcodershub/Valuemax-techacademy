@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   return (
       <Routes>
-        <Route path="/training" element={<Training />} />
+        <Route index element={<Training />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
   );
