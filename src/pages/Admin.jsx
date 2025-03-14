@@ -81,8 +81,8 @@ const Admin = () => {
           <button
             to="/"
             end="true"
-            className="bg-transparent flex justify-between items-center p-0 mt-2 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pl-2 pr-2"
-            onClick={() => {setIsCertificationOpen(!setIsCertificationOpen);
+            className="bg-transparent flex justify-between items-center p-0 mt-2 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pl-2 pr-2 hide-outline"
+            onClick={() => {setIsCertificationOpen(prevState => !prevState);
               console.log("It worked");
             }}
           >
