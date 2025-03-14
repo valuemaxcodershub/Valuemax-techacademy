@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   FaCircleUser,
   FaHouse,
@@ -82,7 +82,8 @@ const Admin = () => {
             to="/"
             end="true"
             className="bg-transparent flex justify-between items-center p-0 mt-2 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pl-2 pr-2 hide-outline"
-            onClick={() => {setIsCertificationOpen(prevState => !prevState);
+            onClick={() => {
+              setIsCertificationOpen((prevState) => !prevState);
               console.log("It worked");
             }}
           >
@@ -135,26 +136,51 @@ const Admin = () => {
         <div className="m-6 flex flex-col items-start">
           <h2 className="text-4xl mb-4 text-white">Dashboard</h2>
           <div className="flex flex-row flex-wrap">
-            <button className="bg-white rounded-sm flex flex-col justify-center items-center min-w-[280px] text-black p-2 mr-4 mt-2 grow">
-              <GoPerson size={70} />
-              Student Management
-            </button>
-            <button className="bg-white rounded-sm flex flex-col justify-center items-center min-w-[280px] text-black p-2 mr-4 mt-2 grow">
-              <BiSolidBook size={70} />
-              Course Management
-            </button>
-            <button className="bg-white rounded-sm flex flex-col justify-center items-center min-w-[280px] text-black p-2 mr-4 mt-2 grow">
-              <IoIosPeople size={70} />
-              Admin Management
-            </button>
-            <button className="bg-white rounded-sm flex flex-col justify-center items-center min-w-[280px] text-black p-2 mr-4 mt-2 grow">
-              <IoMdCloudUpload size={70} />
-              Upload Certificate
-            </button>
-            <button className="bg-white rounded-sm flex flex-col justify-center items-center min-w-[280px] text-black p-2 mr-4 mt-2 grow">
-              <FaGraduationCap size={70} />
-              Manage Certificate
-            </button>
+            <Link
+              to="/"
+              className="bg-white rounded-sm min-w-[280px] text-black p-2 mr-4 mt-2 grow"
+            >
+              <button className="flex flex-col justify-center items-center w-full">
+                <GoPerson size={70} />
+                Student Management
+              </button>
+            </Link>
+            <Link
+              to="/"
+              className="bg-white rounded-sm min-w-[280px] text-black p-2 mr-4 mt-2 grow"
+            >
+              <button className="flex flex-col justify-center items-center w-full">
+                <BiSolidBook size={70} />
+                Course Management
+              </button>
+            </Link>
+            <Link
+              to="/"
+              className="bg-white rounded-sm text-black p-2 mr-4 mt-2 grow"
+            >
+              <button className="flex flex-col justify-center items-center min-w-[280px] w-full">
+                <IoIosPeople size={70} />
+                Admin Management
+              </button>
+            </Link>
+            <Link
+              to="/"
+              className="bg-white rounded-sm text-black p-2 mr-4 mt-2 grow"
+            >
+              <button className="flex flex-col justify-center items-center min-w-[280px] w-full">
+                <IoMdCloudUpload size={70} />
+                Upload Certificate
+              </button>
+            </Link>
+            <Link
+              to="/"
+              className="bg-white rounded-sm text-black p-2 mr-4 mt-2 grow"
+            >
+              <button className="flex flex-col justify-center items-center min-w-[280px] w-full">
+                <FaGraduationCap size={70} />
+                Manage Certificate
+              </button>
+            </Link>
           </div>
         </div>
       </main>
