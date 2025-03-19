@@ -6,6 +6,7 @@ import { GoPerson } from "react-icons/go";
 import { IoIosPeople, IoMdCreate } from "react-icons/io";
 import logo from "../assets/valuemax-logo.png";
 import Sidebar from "../components/Sidebar";
+import DashboardLinkButtons from "../components/DashboardLinkButtons";
 
 const Admin = () => {
   const [darkMode, setDarkMode] = useState(
@@ -27,6 +28,12 @@ const Admin = () => {
     "flex flex-col justify-center items-center min-w-[280px] w-full";
   const dashboardLinkCss =
     "bg-white rounded-lg min-w-[280px] text-black p-2 mr-4 mt-2 grow";
+
+  const studentIcon = <GoPerson size={70} />;
+  const courseIcon = <BiSolidBook size={70} />;
+  const adminIcon = <IoIosPeople size={70} />;
+  const generateCertificateIcon = <IoMdCreate size={70} />;
+  const manageCertificateIcon = <FaGraduationCap size={70} />;
   return (
     <div
       className={
@@ -35,7 +42,7 @@ const Admin = () => {
           : "flex flex-row bg-blue-700 roboto-uniquifier"
       }
     >
-      <Sidebar mode = {darkMode}/>
+      <Sidebar mode={darkMode} />
       <main
         className={
           darkMode
@@ -71,36 +78,31 @@ const Admin = () => {
         <div className="m-6 flex flex-col items-start">
           <h2 className="text-4xl mb-4 text-white">Dashboard</h2>
           <div className="flex flex-row flex-wrap">
-            <Link to="/" className={dashboardLinkCss}>
-              <button className={dashboardBtnCss}>
-                <GoPerson size={70} />
-                Student Management
-              </button>
-            </Link>
-            <Link to="/" className={dashboardLinkCss}>
-              <button className={dashboardBtnCss}>
-                <BiSolidBook size={70} />
-                Course Management
-              </button>
-            </Link>
-            <Link to="/" className={dashboardLinkCss}>
-              <button className={dashboardBtnCss}>
-                <IoIosPeople size={70} />
-                Admin Management
-              </button>
-            </Link>
-            <Link to="/" className={dashboardLinkCss}>
-              <button className={dashboardBtnCss}>
-                <IoMdCreate size={70} />
-                Generate Certificate
-              </button>
-            </Link>
-            <Link to="/" className={dashboardLinkCss}>
-              <button className={dashboardBtnCss}>
-                <FaGraduationCap size={70} />
-                Manage Certificate
-              </button>
-            </Link>
+            <DashboardLinkButtons
+              destination="/"
+              icon={studentIcon}
+              title="Student Management"
+            />
+            <DashboardLinkButtons
+              destination="/"
+              icon={courseIcon}
+              title="Course Management"
+            />
+            <DashboardLinkButtons
+              destination="/"
+              icon={adminIcon}
+              title="Admin Management"
+            />
+            <DashboardLinkButtons
+              destination="/"
+              icon={generateCertificateIcon}
+              title="Generate Certificate"
+            />
+            <DashboardLinkButtons
+              destination="/"
+              icon={manageCertificateIcon}
+              title="Manage Certificate"
+            />
           </div>
         </div>
       </main>
