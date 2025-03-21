@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaGraduationCap } from "react-icons/fa6";
 import { BiSolidBook, BiSolidDoorOpen } from "react-icons/bi";
 import { GoPerson } from "react-icons/go";
@@ -10,7 +9,7 @@ import DashboardLinkButtons from "../components/DashboardLinkButtons";
 
 const Admin = () => {
   const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
+    !(localStorage.getItem("theme") === "dark")
   );
 
   useEffect(() => {
@@ -42,7 +41,18 @@ const Admin = () => {
           : "flex flex-row bg-blue-700 roboto-uniquifier"
       }
     >
-      <Sidebar mode={darkMode} />
+      <div>
+        <div
+          className={
+            darkMode
+              ? "border-r border-b border-slate-500 p-4 hidden sm:block"
+              : "border-r border-b border-blue-600 p-4 hidden sm:block"
+          }
+        >
+          <img src={logo} alt="valuemax-logo.png" />
+        </div>
+        <Sidebar mode={darkMode} />
+      </div>
       <main
         className={
           darkMode
@@ -67,9 +77,9 @@ const Admin = () => {
                 setDarkMode((prevState) => !prevState);
               }}
             >
-              {darkMode ? <FaMoon size={20} /> : <FaSun size={20} />}
+              {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </button>
-            <button className="w-[100px] bg-white flex rounded-lg justify-between items-center px-2 py-1 my-4 mr-4">
+            <button className="w-[100px] bg-white flex rounded-lg justify-between items-center px-2 py-1 my-4 mr-4 text-black">
               <BiSolidDoorOpen size={20} />
               Log Out
             </button>
@@ -79,7 +89,7 @@ const Admin = () => {
           <h2 className="text-4xl mb-4 text-white">Dashboard</h2>
           <div className="flex flex-row flex-wrap">
             <DashboardLinkButtons
-              destination="/"
+              destination="/student-management"
               icon={studentIcon}
               title="Student Management"
             />

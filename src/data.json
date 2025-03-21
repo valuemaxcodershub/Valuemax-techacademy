@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "Adeshola Destiny",
+    "Age": 18,
+    "Course": "Front-end Programming",
+    "Date": "24-03-2025",
+    "Status": "enrolled",
+    "Payment": "Paid"
+  },
+  {
+    "Name": "Dare Tobiloba",
+    "Age": 25,
+    "Course": "UI/UI Design",
+    "Date": "12-12-2023",
+    "Status": "graduated",
+    "Payment": "Completed"
+  },
+  {
+    "Name": "Chidera Ngozi",
+    "Age": 21,
+    "Course": "Data Science and Machine Learning",
+    "Date": "13-02-2025",
+    "Status": "enrolled",
+    "Payment": "Completed"
+  },
+  {
+    "Name": "Olu Damien",
+    "Age": 21,
+    "Course": "Back-end Programming",
+    "Date": "09-01-2025",
+    "Status": "enrolled",
+    "Payment": "In-progress"
+  },
+  {
+    "Name": "Shaun Michael",
+    "Age": 25,
+    "Course": "Cyber Security",
+    "Date": "12-07-2024",
+    "Status": "graduated",
+    "Payment": "Completed"
+  }
+]
