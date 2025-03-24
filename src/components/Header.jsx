@@ -23,8 +23,8 @@ const Header = (props) => {
       <div
         className={
           props.darkMode
-            ? "border-r border-b border-slate-500 p-4 bg-slate-800 min-w-[290px] md:w-[290px]"
-            : "border-r border-b border-blue-600 p-4 bg-blue-700 min-w-[290px] md:w-[290px]"
+            ? "border-r border-b border-slate-500 p-4 bg-slate-800 min-w-[290px] md:w-[290px] hidden sm:block"
+            : "border-r border-b border-blue-600 p-4 bg-blue-700 min-w-[290px] md:w-[290px] hidden sm:block"
         }
       >
         <img src={logo} alt="valuemax-logo.png" />

@@ -9,7 +9,7 @@ import DashboardLinkButtons from "../components/DashboardLinkButtons";
 
 const Admin = () => {
   const [darkMode, setDarkMode] = useState(
-    !(localStorage.getItem("theme") === "dark")
+    (localStorage.getItem("theme") === "darkMode")
   );
 
   useEffect(() => {
@@ -37,8 +37,8 @@ const Admin = () => {
     <div
       className={
         darkMode
-          ? "flex flex-row bg-slate-800 roboto-uniquifier"
-          : "flex flex-row bg-blue-700 roboto-uniquifier"
+          ? "flex flex-row bg-slate-800 roboto-uniquifier min-h-screen"
+          : "flex flex-row bg-blue-700 roboto-uniquifier min-h-screen"
       }
     >
       <div>
@@ -56,8 +56,8 @@ const Admin = () => {
       <main
         className={
           darkMode
-            ? "flex bg-slate-600 w-[2000px] flex-col"
-            : "flex bg-blue-600 w-[2000px] flex-col"
+            ? "flex bg-slate-600 flex-col"
+            : "flex bg-blue-600 flex-col"
         }
       >
         <div

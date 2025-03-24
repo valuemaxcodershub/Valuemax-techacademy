@@ -8,6 +8,7 @@ import {
   FaUserTie,
   FaCertificate,
   FaAngleDown,
+  FaRegIdCard,
 } from "react-icons/fa6";
 import darkMode from "./Header";
 
@@ -16,6 +17,7 @@ const Sidebar = (props) => {
   const [isCourseManagementOpen, setIsCourseManagementOpen] = useState(false);
   const [isStudentManagementOpen, setIsStudentManagementOpen] = useState(false);
   const [isAdminManagementOpen, setIsAdminManagementOpen] = useState(false);
+  const [isIDCardManagementOpen, setIsIDCardManagementOpen] = useState(false);
   // const [darkMode, setDarkMode] = useState(
   //   localStorage.getItem("theme") === "dark"
   // );
@@ -40,7 +42,7 @@ const Sidebar = (props) => {
   const btnNavLinkNotActiveCss =
     "pl-9 text-left pt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pr-2";
   return (
-    <aside className="min-w-[290px] md:w-[290px] h-screen hidden sm:block">
+    <aside className="min-w-[290px] md:w-[290px] hidden sm:block">
       <div
         className={
           darkMode
@@ -88,7 +90,7 @@ const Sidebar = (props) => {
               Add New Course
             </NavLink>
             <NavLink
-              to="/"
+              to="/course-management"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }
@@ -199,6 +201,41 @@ const Sidebar = (props) => {
               }
             >
               Manage Certificate
+            </NavLink>
+          </>
+        )}
+        <button
+          className={navLinkBtnCss}
+          onClick={() => {
+            setIsIDCardManagementOpen((prevState) => !prevState);
+          }}
+        >
+          <div className="flex items-center">
+            <FaRegIdCard size={26} className="pr-2" />
+            <p>ID Card Management</p>
+          </div>
+          <FaAngleDown
+            size={20}
+            className={`pr-1 ${isIDCardManagementOpen ? "rotate-180" : ""} `}
+          />
+        </button>
+        {isIDCardManagementOpen && (
+          <>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Generate ID Card
+            </NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Manage ID Cards
             </NavLink>
           </>
         )}

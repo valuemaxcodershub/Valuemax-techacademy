@@ -4,7 +4,7 @@
     "Age": 18,
     "Course": "Front-end Programming",
     "Date": "24-03-2025",
-    "Status": "enrolled",
+    "Status": "Suspended",
     "Payment": "Paid"
   },
   {
@@ -12,7 +12,7 @@
     "Age": 25,
     "Course": "UI/UI Design",
     "Date": "12-12-2023",
-    "Status": "graduated",
+    "Status": "Graduated",
     "Payment": "Completed"
   },
   {
@@ -20,7 +20,7 @@
     "Age": 21,
     "Course": "Data Science and Machine Learning",
     "Date": "13-02-2025",
-    "Status": "enrolled",
+    "Status": "Active",
     "Payment": "Completed"
   },
   {
@@ -28,15 +28,15 @@
     "Age": 21,
     "Course": "Back-end Programming",
     "Date": "09-01-2025",
-    "Status": "enrolled",
+    "Status": "Pending",
     "Payment": "In-progress"
   },
   {
     "Name": "Shaun Michael",
     "Age": 25,
     "Course": "Cyber Security",
-    "Date": "12-07-2024",
-    "Status": "graduated",
+    "Date": "12-012-2024",
+    "Status": "Awaiting Project",
     "Payment": "Completed"
   }
 ]

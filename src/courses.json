@@ -1,0 +1,44 @@
+[
+  {
+    "Title": "Front-end Programming",
+    "Teacher": "Dele Akinola",
+    "Duration": "4 Months",
+    "Price": 160000
+  },
+  {
+    "Title": "Back-end Programming",
+    "Teacher": "Chidera Chineke",
+    "Duration": "3 Months",
+    "Price": 120000
+  },
+  {
+    "Title": "Data Science",
+    "Teacher": "Noni Madueke",
+    "Duration": "3 Months",
+    "Price": 120000
+  },
+  {
+    "Title": "Machine Learning and Artificial Intelligence",
+    "Teacher": "Noni Madueke",
+    "Duration": "3 Months",
+    "Price": 120000
+  },
+  {
+    "Title": "Mobile App Development",
+    "Teacher": "Alex Iwobi",
+    "Duration": "4 Months",
+    "Price": 200000
+  },
+  {
+    "Title": "Data Analysis",
+    "Teacher": "Wilfred Ndidi",
+    "Duration": "3 Months",
+    "Price": 120000
+  },
+  {
+    "Title": "UI/UX Product Design",
+    "Teacher": "Ademola Lookman",
+    "Duration": "2 Months",
+    "Price": 80000
+  }
+]
