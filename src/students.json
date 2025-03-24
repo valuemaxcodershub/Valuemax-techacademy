@@ -1,42 +1,57 @@
 [
   {
     "Name": "Adeshola Destiny",
+    "StudentID": 233546,
     "Age": 18,
     "Course": "Front-end Programming",
-    "Date": "24-03-2025",
+    "StartDate": "24-03-2025",
     "Status": "Suspended",
-    "Payment": "Paid"
+    "Payment": "Paid",
+    "IDCardDownloadLink": "https://www.google.com.ng/",
+    "CertificateDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Dare Tobiloba",
+    "StudentID": 230567,
     "Age": 25,
     "Course": "UI/UI Design",
-    "Date": "12-12-2023",
+    "StartDate": "12-12-2023",
     "Status": "Graduated",
-    "Payment": "Completed"
+    "Payment": "Completed",
+    "IDCardDownloadLink": "https://www.google.com.ng/",
+    "CertificateDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Chidera Ngozi",
+    "StudentID": 240342,
     "Age": 21,
-    "Course": "Data Science and Machine Learning",
-    "Date": "13-02-2025",
+    "Course": "Data Science",
+    "StartDate": "13-02-2025",
     "Status": "Active",
-    "Payment": "Completed"
+    "Payment": "Completed",
+    "IDCardDownloadLink": "https://www.google.com.ng/",
+    "CertificateDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Olu Damien",
+    "StudentID": 230564,
     "Age": 21,
     "Course": "Back-end Programming",
-    "Date": "09-01-2025",
+    "StartDate": "09-01-2025",
     "Status": "Pending",
-    "Payment": "In-progress"
+    "Payment": "In-progress",
+    "IDCardDownloadLink": "https://www.google.com.ng/",
+    "CertificateDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Shaun Michael",
+    "StudentID": 234567,
     "Age": 25,
     "Course": "Cyber Security",
-    "Date": "12-012-2024",
+    "StartDate": "12-012-2024",
     "Status": "Awaiting Project",
-    "Payment": "Completed"
+    "Payment": "Completed",
+    "IDCardDownloadLink": "https://www.google.com.ng/",
+    "CertificateDownloadLink": "https://www.google.com.ng/"
   }
 ]

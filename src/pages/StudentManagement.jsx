@@ -15,7 +15,7 @@ const StudentManagement = () => {
       setFilteredData(students);
     } else {
       const filtered = students.filter((item) => (
-        item.Name.toLowerCase().includes(searchTerm.toLowerCase()) || item.Course.toLowerCase().includes(searchTerm.toLowerCase()) || item.Status.toLowerCase().includes(searchTerm.toLowerCase()) || item.Payment.toLowerCase().includes(searchTerm.toLowerCase()) || item.Age.toString().includes(searchTerm.toLowerCase()) || item.Date.toLowerCase().includes(searchTerm.toLowerCase())
+        item.Name.toLowerCase().includes(searchTerm.toLowerCase()) || item.StudentID.toString().includes(searchTerm.toLowerCase()) || item.Course.toLowerCase().includes(searchTerm.toLowerCase()) || item.Status.toLowerCase().includes(searchTerm.toLowerCase()) || item.Payment.toLowerCase().includes(searchTerm.toLowerCase()) || item.Age.toString().includes(searchTerm.toLowerCase()) || item.Date.toLowerCase().includes(searchTerm.toLowerCase())
       ));
       setFilteredData(filtered);
     }
@@ -56,9 +56,10 @@ const StudentManagement = () => {
               <thead>
                 <tr className={darkMode ? "bg-black" : "bg-blue-900"}>
                   <th className="p-2 text-left">Name</th>
-                  <th className="p-2 text-left">Age</th>
+                  <th className="p-2 text-left">Student ID</th>
+                  <th className="p-2 text-left hidden lg:block">Age</th>
                   <th className="p-2 text-left">Course</th>
-                  <th className="p-2 text-left">Date</th>
+                  <th className="p-2 text-left hidden lg:block">Start Date</th>
                   <th className="p-2 text-left">Status</th>
                   <th className="p-2 text-left">Payment</th>
                 </tr>
@@ -78,9 +79,10 @@ const StudentManagement = () => {
                     }
                   >
                     <td className="p-2 text-left">{item.Name}</td>
-                    <td className="p-2 text-left">{item.Age}</td>
+                    <td className="p-2 text-left">{item.StudentID}</td>
+                    <td className="p-2 text-left hidden lg:block">{item.Age}</td>
                     <td className="p-2 text-left">{item.Course}</td>
-                    <td className="p-2 text-left">{item.Date}</td>
+                    <td className="p-2 text-left hidden lg:block">{item.StartDate}</td>
                     <td className="p-2 text-left">{item.Status}</td>
                     <td className="p-2 text-left">{item.Payment}</td>
                   </tr>

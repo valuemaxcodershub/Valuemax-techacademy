@@ -6,6 +6,9 @@ import StudentManagement from "./pages/StudentManagement";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import CourseManagement from "./pages/CourseManagement";
+import AdminManagement from "./pages/AdminManagement";
+import CertificateManagement from "./pages/CertificateManagement";
+import IDCardManagement from "./pages/IDCardManagement";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path="/sidebar" element={<Sidebar />} />
         <Route path="/student-management" element={<StudentManagement />} />
         <Route path="/course-management" element={<CourseManagement />} />
+        <Route path="/admin-management" element={<AdminManagement />} />
+        <Route path="/certificate-management" element={<CertificateManagement />} />
+        <Route path="/id-card-management" element={<IDCardManagement />} />
       </Routes>
   );
 }
