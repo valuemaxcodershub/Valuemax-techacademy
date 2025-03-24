@@ -160,7 +160,7 @@ const Sidebar = (props) => {
               Add New Admin
             </NavLink>
             <NavLink
-              to="/"
+              to="/admin-management"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }
@@ -195,7 +195,7 @@ const Sidebar = (props) => {
               Generate Certificate
             </NavLink>
             <NavLink
-              to="/"
+              to="/certificate-management"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }
@@ -230,7 +230,7 @@ const Sidebar = (props) => {
               Generate ID Card
             </NavLink>
             <NavLink
-              to="/"
+              to="/id-card-management"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }

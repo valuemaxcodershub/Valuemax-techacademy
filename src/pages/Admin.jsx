@@ -94,12 +94,12 @@ const Admin = () => {
               title="Student Management"
             />
             <DashboardLinkButtons
-              destination="/"
+              destination="/course-management"
               icon={courseIcon}
               title="Course Management"
             />
             <DashboardLinkButtons
-              destination="/"
+              destination="/admin-management"
               icon={adminIcon}
               title="Admin Management"
             />
@@ -109,7 +109,7 @@ const Admin = () => {
               title="Generate Certificate"
             />
             <DashboardLinkButtons
-              destination="/"
+              destination="/certificate-management"
               icon={manageCertificateIcon}
               title="Manage Certificate"
             />
