@@ -11,6 +11,8 @@ import {
   FaRegIdCard,
 } from "react-icons/fa6";
 import darkMode from "./Header";
+import { FaFileAlt } from "react-icons/fa";
+import { MdAssignment } from "react-icons/md";
 
 const Sidebar = (props) => {
   const [isCertificationOpen, setIsCertificationOpen] = useState(false);
@@ -18,6 +20,7 @@ const Sidebar = (props) => {
   const [isStudentManagementOpen, setIsStudentManagementOpen] = useState(false);
   const [isAdminManagementOpen, setIsAdminManagementOpen] = useState(false);
   const [isIDCardManagementOpen, setIsIDCardManagementOpen] = useState(false);
+  const [isAssignmentOpen, setIsAssignmentOpen] = useState(false);
   // const [darkMode, setDarkMode] = useState(
   //   localStorage.getItem("theme") === "dark"
   // );
@@ -41,6 +44,10 @@ const Sidebar = (props) => {
     "pl-9 text-left pt-1 mr-6 border-b border-yellow-200 text-cyan-400 rounded-lg pr-2";
   const btnNavLinkNotActiveCss =
     "pl-9 text-left pt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pr-2";
+  const outlineNavLinkActiveCss =
+    "pl-2 text-left pt-1 mr-6 border-b border-yellow-200 text-cyan-400 rounded-lg pr-2";
+  const outlineNavLinkNotActiveCss =
+    "pl-2 text-left pt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pr-2";
   return (
     <aside className="min-w-[290px] md:w-[290px] hidden sm:block">
       <div
@@ -64,6 +71,41 @@ const Sidebar = (props) => {
           <FaHouse size={28} className="pr-2" />
           Dashboard
         </NavLink>
+        <button
+          className={navLinkBtnCss}
+          onClick={() => {
+            setIsAdminManagementOpen((prevState) => !prevState);
+          }}
+        >
+          <div className="flex items-center">
+            <FaUserTie size={25} className="pr-2" />
+            Admin Management
+          </div>
+          <FaAngleDown
+            size={20}
+            className={`pr-1 ${isAdminManagementOpen ? "rotate-180" : ""} `}
+          />
+        </button>
+        {isAdminManagementOpen && (
+          <>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Add New Admin
+            </NavLink>
+            <NavLink
+              to="/admin-management"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Manage Admins
+            </NavLink>
+          </>
+        )}
         <button
           className={navLinkBtnCss}
           onClick={() => {
@@ -106,8 +148,8 @@ const Sidebar = (props) => {
           }}
         >
           <div className="flex items-center">
-          <FaUser size={25} className="pr-2" />
-          Student Management
+            <FaUser size={25} className="pr-2" />
+            Student Management
           </div>
           <FaAngleDown
             size={20}
@@ -131,41 +173,6 @@ const Sidebar = (props) => {
               }
             >
               Manage Students
-            </NavLink>
-          </>
-        )}
-        <button
-          className={navLinkBtnCss}
-          onClick={() => {
-            setIsAdminManagementOpen((prevState) => !prevState);
-          }}
-        >
-          <div className="flex items-center">
-          <FaUserTie size={25} className="pr-2" />
-          Admin Management
-          </div>
-          <FaAngleDown
-            size={20}
-            className={`pr-1 ${isAdminManagementOpen ? "rotate-180" : ""} `}
-          />
-        </button>
-        {isAdminManagementOpen && (
-          <>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Add New Admin
-            </NavLink>
-            <NavLink
-              to="/admin-management"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Manage Admins
             </NavLink>
           </>
         )}
@@ -237,8 +244,70 @@ const Sidebar = (props) => {
             >
               Manage ID Cards
             </NavLink>
+            <NavLink
+              to="/id-card/"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Personal ID Card
+            </NavLink>
           </>
         )}
+        <button
+          className={navLinkBtnCss}
+          onClick={() => {
+            setIsAssignmentOpen((prevState) => !prevState);
+          }}
+        >
+          <div className="flex items-center">
+            <MdAssignment size={29} className="pr-2" />
+            <p>Assignment</p>
+          </div>
+          <FaAngleDown
+            size={20}
+            className={`pr-1 ${isAssignmentOpen ? "rotate-180" : ""} `}
+          />
+        </button>
+        {isAssignmentOpen && (
+          <>
+            <NavLink
+              to="/assignment"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Upload Assignment
+            </NavLink>
+            <NavLink
+              to="/edit-assignment"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Edit Assignment
+            </NavLink>
+            <NavLink
+              to="/view-assignment-answers"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              View Student Submission
+            </NavLink>
+          </>
+        )}
+        <NavLink
+          to="/outline"
+          className={({ isActive }) =>
+            isActive ? outlineNavLinkActiveCss : outlineNavLinkNotActiveCss
+          }
+        >
+          <div className="flex items-center">
+            <FaFileAlt size={22} className="pr-2" />
+            <p>Outline</p>
+          </div>
+        </NavLink>
       </nav>
     </aside>
   );

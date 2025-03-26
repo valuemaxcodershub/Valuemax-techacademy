@@ -9,6 +9,8 @@ import CourseManagement from "./pages/CourseManagement";
 import AdminManagement from "./pages/AdminManagement";
 import CertificateManagement from "./pages/CertificateManagement";
 import IDCardManagement from "./pages/IDCardManagement";
+import Modal from "./components/Modal";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/admin-management" element={<AdminManagement />} />
         <Route path="/certificate-management" element={<CertificateManagement />} />
         <Route path="/id-card-management" element={<IDCardManagement />} />
+        <Route path="/modal" element={<Modal />} />
+        <Route path="/header" element={<Header />} />
       </Routes>
   );
 }

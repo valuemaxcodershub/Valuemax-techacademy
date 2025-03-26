@@ -3,12 +3,14 @@ import Sidebar from "../components/Sidebar";
 import admins from "../admins.json";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 const AdminManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"
   );
   const [filteredData, setFilteredData] = useState(admins);
+  const navigate = useNavigate();
 
   const handleSearch = (searchTerm) => {
     if (!searchTerm) {
@@ -20,6 +22,10 @@ const AdminManagement = () => {
       setFilteredData(filtered);
     }
   };
+
+  const addAdmin = () => {
+    navigate("/add-admin");
+  }
 
   useEffect(() => {
     if (darkMode) {
@@ -51,12 +57,17 @@ const AdminManagement = () => {
                 : "bg-blue-600 text-white grow p-4 lg:p-6"
             }
           >
+            <div className="grid justify-items-end">
+            <button className="bg-white text-black rounded-md py-2 px-3 mb-3 " onClick={addAdmin}>Add new Admin</button>
+            </div>
             <SearchBar onSearch={handleSearch} />
             <table className="w-full mt-4">
               <thead>
                 <tr className={darkMode ? "bg-black" : "bg-blue-900"}>
                   <th className="p-2 text-left">Name</th>
+                  <th className="p-2 text-left">ID</th>
                   <th className="p-2 text-left">Role</th>
+                  <th className="p-2 text-left"></th>
                 </tr>
               </thead>
               <tbody>
@@ -74,7 +85,11 @@ const AdminManagement = () => {
                     }
                   >
                     <td className="p-2 text-left">{item.Name}</td>
+                    <td className="p-2 text-left">{item.ID}</td>
                     <td className="p-2 text-left">{item.Role}</td>
+                    <td className="p-2 text-left"><button onClick={() => {
+                      navigate(`/edit-admin/${item.ID}`)
+                    }}>Edit</button></td>
                   </tr>
                 ))}
               </tbody>
