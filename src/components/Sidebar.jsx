@@ -9,10 +9,12 @@ import {
   FaCertificate,
   FaAngleDown,
   FaRegIdCard,
+  FaDoorOpen,
 } from "react-icons/fa6";
 import darkMode from "./Header";
 import { FaFileAlt } from "react-icons/fa";
 import { MdAssignment } from "react-icons/md";
+import Modal from "./Modal";
 
 const Sidebar = (props) => {
   const [isCertificationOpen, setIsCertificationOpen] = useState(false);
@@ -21,9 +23,31 @@ const Sidebar = (props) => {
   const [isAdminManagementOpen, setIsAdminManagementOpen] = useState(false);
   const [isIDCardManagementOpen, setIsIDCardManagementOpen] = useState(false);
   const [isAssignmentOpen, setIsAssignmentOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
   // const [darkMode, setDarkMode] = useState(
   //   localStorage.getItem("theme") === "dark"
   // );
+
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  }
+
+  const handleLogout = () =>{
+    // Put Logout functionaliity here
+    console.log("Logging Out");
+    closeModal();
+    setTimeout(() => { // Add a slight delay
+      navigate('/');
+    }, 50); // 50ms delay (adjust as needed)
+    // navigate('/');
+  }
+
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -88,14 +112,14 @@ const Sidebar = (props) => {
         </button>
         {isAdminManagementOpen && (
           <>
-            <NavLink
+            {/* <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }
             >
               Add New Admin
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/admin-management"
               className={({ isActive }) =>
@@ -123,14 +147,14 @@ const Sidebar = (props) => {
         </button>
         {isCourseManagementOpen && (
           <>
-            <NavLink
+            {/* <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }
             >
               Add New Course
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/course-management"
               className={({ isActive }) =>
@@ -262,7 +286,7 @@ const Sidebar = (props) => {
         >
           <div className="flex items-center">
             <MdAssignment size={29} className="pr-2" />
-            <p>Assignment</p>
+            <p>Resources</p>
           </div>
           <FaAngleDown
             size={20}
@@ -277,7 +301,7 @@ const Sidebar = (props) => {
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }
             >
-              Upload Assignment
+              Give Assignment
             </NavLink>
             <NavLink
               to="/edit-assignment"
@@ -295,19 +319,46 @@ const Sidebar = (props) => {
             >
               View Student Submission
             </NavLink>
+            <NavLink
+              to="/outline"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Outline
+            </NavLink>
           </>
         )}
-        <NavLink
-          to="/outline"
-          className={({ isActive }) =>
-            isActive ? outlineNavLinkActiveCss : outlineNavLinkNotActiveCss
-          }
+        <button
+          className={navLinkBtnCss}
+          onClick={openModal}
         >
           <div className="flex items-center">
-            <FaFileAlt size={22} className="pr-2" />
-            <p>Outline</p>
+            <FaDoorOpen size={29} className="pr-2" />
+            <p>Log Out</p>
           </div>
-        </NavLink>
+        </button>
+        <Modal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            title="Confirm Logout"
+          >
+            <p className="dark:text-white">Are you sure you want to log out?</p>
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={closeModal}
+                className="bg-gray-300 dark:bg-gray-700 text-black dark:text-white p-2 rounded-md mr-2"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleLogout}
+                className="bg-red-500 text-white p-2 rounded-md"
+              >
+                Log Out
+              </button>
+            </div>
+          </Modal>
       </nav>
     </aside>
   );

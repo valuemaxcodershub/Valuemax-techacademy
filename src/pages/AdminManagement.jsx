@@ -17,7 +17,7 @@ const AdminManagement = () => {
       setFilteredData(admins);
     } else {
       const filtered = admins.filter((item) => (
-        item.Title.toLowerCase().includes(searchTerm.toLowerCase()) || item.Teacher.toLowerCase().includes(searchTerm.toLowerCase()) || item.Duration.toLowerCase().includes(searchTerm.toLowerCase()) || item.Price.toString().includes(searchTerm.toLowerCase())
+        item.Name.toLowerCase().includes(searchTerm.toLowerCase()) || item.Teacher.toLowerCase().includes(searchTerm.toLowerCase()) || item.Duration.toLowerCase().includes(searchTerm.toLowerCase()) || item.Price.toString().includes(searchTerm.toLowerCase())
       ));
       setFilteredData(filtered);
     }

@@ -3,23 +3,37 @@ import Sidebar from "../components/Sidebar";
 import students from "../students.json";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
+import { useNavigate } from "react-router";
 
 const StudentManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"
   );
   const [filteredData, setFilteredData] = useState(students);
+  const navigate = useNavigate();
+
 
   const handleSearch = (searchTerm) => {
     if (!searchTerm) {
       setFilteredData(students);
     } else {
-      const filtered = students.filter((item) => (
-        item.Name.toLowerCase().includes(searchTerm.toLowerCase()) || item.StudentID.toString().includes(searchTerm.toLowerCase()) || item.Course.toLowerCase().includes(searchTerm.toLowerCase()) || item.Status.toLowerCase().includes(searchTerm.toLowerCase()) || item.Payment.toLowerCase().includes(searchTerm.toLowerCase()) || item.Age.toString().includes(searchTerm.toLowerCase()) || item.Date.toLowerCase().includes(searchTerm.toLowerCase())
-      ));
+      const filtered = students.filter(
+        (item) =>
+          item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.StudentID.toString().includes(searchTerm.toLowerCase()) ||
+          item.Course.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.Status.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.Payment.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.Age.toString().includes(searchTerm.toLowerCase()) ||
+          item.StartDate.toLowerCase().includes(searchTerm.toLowerCase())
+      );
       setFilteredData(filtered);
     }
   };
+
+  const addStudent = () => {
+    navigate("/add-student");
+  }
 
   useEffect(() => {
     if (darkMode) {
@@ -51,10 +65,19 @@ const StudentManagement = () => {
                 : "bg-blue-600 text-white grow p-4 lg:p-6"
             }
           >
+            <div className="grid justify-items-end">
+              <button
+                className="bg-white text-black rounded-md py-2 px-3 mb-3 "
+                onClick={addStudent}
+              >
+                Add new Student
+              </button>
+            </div>
             <SearchBar onSearch={handleSearch} />
             <table className="w-full mt-4">
               <thead>
                 <tr className={darkMode ? "bg-black" : "bg-blue-900"}>
+                  <th className="p-2 text-left">S/N</th>
                   <th className="p-2 text-left">Name</th>
                   <th className="p-2 text-left">Student ID</th>
                   <th className="p-2 text-left hidden lg:block">Age</th>
@@ -78,11 +101,16 @@ const StudentManagement = () => {
                         : "bg-blue-800"
                     }
                   >
+                    <td className="p-2 text-left">{index + 1}</td>
                     <td className="p-2 text-left">{item.Name}</td>
                     <td className="p-2 text-left">{item.StudentID}</td>
-                    <td className="p-2 text-left hidden lg:block">{item.Age}</td>
+                    <td className="p-2 text-left hidden lg:block">
+                      {item.Age}
+                    </td>
                     <td className="p-2 text-left">{item.Course}</td>
-                    <td className="p-2 text-left hidden lg:block">{item.StartDate}</td>
+                    <td className="p-2 text-left hidden lg:block">
+                      {item.StartDate}
+                    </td>
                     <td className="p-2 text-left">{item.Status}</td>
                     <td className="p-2 text-left">{item.Payment}</td>
                   </tr>
