@@ -1,8 +1,9 @@
 import React from 'react'
 import "../assets/css/style.css"
 import "../assets/css/smallScreen.css"
-import htmlcss from "../assets/images/html-css.webp"
-import jscourse from "../assets/images/modernjs.webp"
+import pre from "../assets/images/pre.jpg"
+import olayinka from "../assets/images/olayinka.jpg"
+import ban from "../assets/images/ban.jpg"
 
 const Testimonial = () => {
   return (
@@ -16,29 +17,70 @@ const Testimonial = () => {
       <div class="test-box">
          <div class="test-each">
             <p>
-               I thought I had lost my crypto forever after falling for a scam, but 
-               this team worked tirelessly to trace and recover my funds. Their 
-               professionalism and dedication were beyond my expectations. Highly 
-               recommended!
+               I am writing this testimony to express my utmost gratitude and satisfaction
+               with the exceptional training experience I had at Valumax Coders' Hub to learn Data Science. It
+               was an enriching journey that has profoundly impacted my professional growth and skills in the
+               field of data science.
+               The instructors demonstrated deep subject matter knowledge and were able to effectively convey
+               complex concepts in a clear and concise manner.
+               The curriculum was thoughtfully designed, covering a wide range of essential topics in data
+               science. The combination of theoretical foundations and practical applications provided a better
+               understanding. The hands-on exercises and projects allowed me to apply the concepts learned and
+               develop the necessary skills to tackle real-world data challenges.
+               Furthermore, the availability of modern tools and resources ensured a seamless learning
+               experience.
+               I am grateful for the opportunity to have been a part of the data science training program
+               at VCH. The knowledge and skills I have acquired will undoubtedly be useful in my career.
+               In conclusion, I highly recommend VCH to anyone seeking comprehensive and practical training in
+               data science.
+               Thank you for the invaluable experience that will have a lasting impact on my professional
+               journey.
+               Sincerely,                    
             </p>
             <div>
                <div class="test-img">
-                  <img src={htmlcss} alt=""/>
+                  <img src={pre} alt=""/>
                </div>
-               <h3>David M.</h3>
+               <h3>Amangele Oyintokoni Predebi</h3>
             </div>
          </div>
          <div class="test-each">
             <p>
-               After being locked out of my wallet for months, I was skeptical about 
-               ever regaining access. Thankfully, they guided me through every step 
-               and successfully recovered my assets. I’m beyond grateful!
+               At ValueMax coders’ Hub (VCH), I found an accessible curriculum which the tutor
+               expertly delivered over a relatively light schedule of classes. I enjoyed an excellent
+               learning environment which fostered conversations between fellow students. The tasks I was given
+               for class exercises and assignments strongly encouraged self-learning, which I have found
+               invaluable ever since. The final projects in particular were crafted with each student’s
+               individual strengths and weaknesses in mind, which convinced me that the tutors at VCH are not
+               only skilled, but also mindful. I found the curriculum to be very
+               focused on taking students from complete ignorance to industry accepted levels of productivity.
+               In summary, my learning experience at ValueMax coders’ Hub was wholistic and helped me develop
+               skills that I have found useful even outside of my training subject.                    
             </p>
             <div>
                <div class="test-img">
-                  <img src={jscourse} alt=""/>
+                  <img src={ban} alt=""/>
                </div>
-               <h3>Mary K.</h3>
+               <h3>Tserga Barnabas</h3>
+            </div>
+         </div>
+         <div class="test-each">
+            <p>
+               I strongly recommend Valuemax coders' Hub for any ICT or Tech based course.
+               When I did my Foundation Computer Training for beginner at VCH, I never thought it was going to
+               run smoothly like that. But the serene environment, well updated
+               teachers and trainers really made my stay there a worthwhile venture.
+               I learnt on paper and on my system,I enjoyed the way it was not just a paper and pencil class but
+               majorly practical.
+               The best part is the assignment and assessment at the end of the class to show that you really
+               learnt something from the class. I still recommend Valuemax coders' Hub for anyone interested in ICT training, either programming
+               or Non programming courses.                 
+            </p>
+            <div>
+               <div class="test-img">
+                  <img src={olayinka} alt=""/>
+               </div>
+               <h3>BABALOLA OLAYINKA</h3>
             </div>
          </div>
       </div>
