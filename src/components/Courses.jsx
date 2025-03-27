@@ -2,7 +2,7 @@ import React from 'react'
 import "../assets/css/style.css"
 import "../assets/css/smallScreen.css"
 import { Link } from "react-router-dom";
-// import courses from '../course.json'
+import courses from '../course.json'
 import htmlcss from "../assets/images/html-css.webp"
 import jscourse from "../assets/images/modernjs.webp"
 import backend from "../assets/images/backend.png"
@@ -47,23 +47,23 @@ const Courses = ({isHome = false}) => {
       market,
       basic
    ]
-   // let courseListing = isHome ? courses.slice(0, 4) : courses
-   // console.log(courseListing);
-   const [courseListing, setCourseListing] = useState([]);
+   let courseListing = isHome ? courses.slice(0, 4) : courses
+   console.log(courseListing);
+   // const [courseListing, setCourseListing] = useState([]);
 
-   useEffect(() => {
-      const fetchCourses =  async () => {
-         const apiUrl = isHome ? "/api/courses?_limit=4" : "/api/courses"
-         try {
-            const res = await fetch(apiUrl);
-            const data = await res.json();
-            setCourseListing(data);
-         } catch (error) {
-            console.log("Error Fetching Data", error);
-         }
-      }
-      fetchCourses()
-   }, [])
+   // useEffect(() => {
+   //    const fetchCourses =  async () => {
+   //       const apiUrl = isHome ? "/api/courses?_limit=4" : "/api/courses"
+   //       try {
+   //          const res = await fetch(apiUrl);
+   //          const data = await res.json();
+   //          setCourseListing(data);
+   //       } catch (error) {
+   //          console.log("Error Fetching Data", error);
+   //       }
+   //    }
+   //    fetchCourses()
+   // }, [])
    // console.log(courseListing);
 
 

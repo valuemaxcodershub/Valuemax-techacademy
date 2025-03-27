@@ -41,7 +41,7 @@ const CoursePage = () => {
       market,
       basic
    ]
-   console.log(id);
+  //  console.log(id);
 
    const [course, setCourse] = useState(null)
    

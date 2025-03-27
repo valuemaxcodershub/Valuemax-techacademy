@@ -1,5 +1,5 @@
-  
-[
+{
+  "courses": [
       {  
          "id": "1",
          "title": "Front-End: Responsive Web Design",
@@ -89,3 +89,4 @@
          "description": "This is where it all starts - laying a solid foundation of your knowledge of computer. The  course will cover the fundamentals of computer hardware, operating systems, and common software  application such as Microsoft Word, Excel, and Powerpoint. Additionally, students will learn  about online tools and platforms for professional collaboration and communication. After  completing the course, students will have solid foundation of computer skills that can that  can be used in various industries and career paths." 
       }
    ]
+}
