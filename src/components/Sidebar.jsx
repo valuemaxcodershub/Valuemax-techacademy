@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   FaCircleUser,
   FaHouse,
@@ -23,30 +23,31 @@ const Sidebar = (props) => {
   const [isAdminManagementOpen, setIsAdminManagementOpen] = useState(false);
   const [isIDCardManagementOpen, setIsIDCardManagementOpen] = useState(false);
   const [isAssignmentOpen, setIsAssignmentOpen] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // const [darkMode, setDarkMode] = useState(
   //   localStorage.getItem("theme") === "dark"
   // );
 
+  const navigate = useNavigate();
 
   const openModal = () => {
     setIsModalOpen(true);
-  }
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);
-  }
+  };
 
-  const handleLogout = () =>{
+  const handleLogout = () => {
     // Put Logout functionaliity here
     console.log("Logging Out");
     closeModal();
-    setTimeout(() => { // Add a slight delay
-      navigate('/');
+    setTimeout(() => {
+      // Add a slight delay
+      navigate("/");
     }, 50); // 50ms delay (adjust as needed)
     // navigate('/');
-  }
-
+  };
 
   useEffect(() => {
     if (darkMode) {
@@ -95,76 +96,25 @@ const Sidebar = (props) => {
           <FaHouse size={28} className="pr-2" />
           Dashboard
         </NavLink>
-        <button
-          className={navLinkBtnCss}
-          onClick={() => {
-            setIsAdminManagementOpen((prevState) => !prevState);
-          }}
+        
+        <NavLink
+          to="/admin-management"
+          className={({ isActive }) =>
+            isActive ? navLinkActiveCss : navLinkNotActiveCss
+          }
         >
-          <div className="flex items-center">
-            <FaUserTie size={25} className="pr-2" />
-            Admin Management
-          </div>
-          <FaAngleDown
-            size={20}
-            className={`pr-1 ${isAdminManagementOpen ? "rotate-180" : ""} `}
-          />
-        </button>
-        {isAdminManagementOpen && (
-          <>
-            {/* <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Add New Admin
-            </NavLink> */}
-            <NavLink
-              to="/admin-management"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Manage Admins
-            </NavLink>
-          </>
-        )}
-        <button
-          className={navLinkBtnCss}
-          onClick={() => {
-            setIsCourseManagementOpen((prevState) => !prevState);
-          }}
+          <FaUserTie size={25} className="pr-2" />
+          Manage Admins
+        </NavLink>
+        <NavLink
+          to="/course-management"
+          className={({ isActive }) =>
+            isActive ? navLinkActiveCss : navLinkNotActiveCss
+          }
         >
-          <div className="flex items-center">
-            <FaBook size={25} className="pr-2" />
-            Course Management
-          </div>
-          <FaAngleDown
-            size={20}
-            className={`pr-1 ${isCourseManagementOpen ? "rotate-180" : ""} `}
-          />
-        </button>
-        {isCourseManagementOpen && (
-          <>
-            {/* <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Add New Course
-            </NavLink> */}
-            <NavLink
-              to="/course-management"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Manage Courses
-            </NavLink>
-          </>
-        )}
+          <FaBook size={25} className="pr-2" />
+          Manage Courses
+        </NavLink>
         <button
           className={navLinkBtnCss}
           onClick={() => {
@@ -253,14 +203,6 @@ const Sidebar = (props) => {
         {isIDCardManagementOpen && (
           <>
             <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Generate ID Card
-            </NavLink>
-            <NavLink
               to="/id-card-management"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
@@ -329,36 +271,29 @@ const Sidebar = (props) => {
             </NavLink>
           </>
         )}
-        <button
-          className={navLinkBtnCss}
-          onClick={openModal}
-        >
+        <button className={navLinkBtnCss} onClick={openModal}>
           <div className="flex items-center">
             <FaDoorOpen size={29} className="pr-2" />
             <p>Log Out</p>
           </div>
         </button>
-        <Modal
-            isOpen={isModalOpen}
-            onClose={closeModal}
-            title="Confirm Logout"
-          >
-            <p className="dark:text-white">Are you sure you want to log out?</p>
-            <div className="flex justify-end mt-4">
-              <button
-                onClick={closeModal}
-                className="bg-gray-300 dark:bg-gray-700 text-black dark:text-white p-2 rounded-md mr-2"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleLogout}
-                className="bg-red-500 text-white p-2 rounded-md"
-              >
-                Log Out
-              </button>
-            </div>
-          </Modal>
+        <Modal isOpen={isModalOpen} onClose={closeModal} title="Confirm Logout">
+          <p className="dark:text-white">Are you sure you want to log out?</p>
+          <div className="flex justify-end mt-4">
+            <button
+              onClick={closeModal}
+              className="bg-gray-300 dark:bg-gray-700 text-black dark:text-white p-2 rounded-md mr-2"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleLogout}
+              className="bg-red-500 text-white p-2 rounded-md"
+            >
+              Log Out
+            </button>
+          </div>
+        </Modal>
       </nav>
     </aside>
   );

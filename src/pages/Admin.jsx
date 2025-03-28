@@ -79,7 +79,7 @@ const Admin = () => {
       </div>
       <main
         className={
-          darkMode ? "flex bg-slate-600 flex-col" : "flex bg-blue-600 flex-col"
+          darkMode ? "flex bg-slate-700 flex-col" : "flex bg-blue-600 flex-col"
         }
       >
         <div
