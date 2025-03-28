@@ -30,14 +30,14 @@ const AdminDropDownMenu = (props) => {
         className={menuLinkCss}
         onClick={props.toggleMobileMenu}
       >
-        Course Management
+        Manage Courses
       </Link>
       <Link
         to="/admin-management"
         className={menuLinkCss}
         onClick={props.toggleMobileMenu}
       >
-        Admin Management
+        Manage Admins
       </Link>
       <Link to="/" className={menuLinkCss} onClick={props.toggleMobileMenu}>
         Generate Certificate
@@ -49,9 +49,9 @@ const AdminDropDownMenu = (props) => {
       >
         Manage Certificate
       </Link>
-      <Link to="/" className={menuLinkCss} onClick={props.toggleMobileMenu}>
+      {/* <Link to="/" className={menuLinkCss} onClick={props.toggleMobileMenu}>
         Generate ID Card
-      </Link>
+      </Link> */}
       <Link
         to="/certificate-management"
         className={menuLinkCss}

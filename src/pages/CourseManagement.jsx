@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import courses from "../courses.json";
+import admins from "../admins.json";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";
@@ -111,13 +112,16 @@ const CourseManagement = () => {
                 </label>
                 <label htmlFor="teacher" className="mb-2">
                   Teacher:
-                  <input
-                    type="text"
-                    id="teacher"
+                  <select name="teacher" id="teacher"
                     value={teacher}
-                    onChange={(e) => setTeacher(e.target.value)}
-                    className="bg-slate-300 p-2 rounded-md w-full"
-                  />
+                    onChange={(e) => {
+                      setTeacher(e.target.value);
+                    }}
+                    className="bg-slate-300 p-2 rounded-md w-full">
+                    {admins.map((item, index) => (
+                      <option id={index} value={item.Name}>{item.Name}</option>
+                    ))}
+                  </select>
                 </label>
                 <label htmlFor="duration" className="mb-2">
                   Duration:
