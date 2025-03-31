@@ -60,9 +60,9 @@ const Sidebar = (props) => {
     console.log("It works");
   }, [darkMode]);
   const navLinkActiveCss =
-    "flex pt-3 justify-items-end mr-6 border-b border-yellow-200 text-cyan-400 rounded-lg pl-2 pr-2 pb-1";
+    "flex pt-1 justify-items-end mr-6 border-b border-yellow-200 text-cyan-400 rounded-lg pl-2 pr-2 pb-1";
   const navLinkNotActiveCss =
-    "flex pt-3 justify-items-end mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pl-2 pr-2";
+    "flex pt-1 justify-items-end mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pl-2 pr-2";
   const navLinkBtnCss =
     "bg-transparent flex justify-between items-center pt-0 mt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pl-2 pr-2 hide-outline pb-1";
   const btnNavLinkActiveCss =
@@ -96,7 +96,7 @@ const Sidebar = (props) => {
           <FaHouse size={28} className="pr-2" />
           Dashboard
         </NavLink>
-        
+
         <NavLink
           to="/admin-management"
           className={({ isActive }) =>
@@ -114,6 +114,15 @@ const Sidebar = (props) => {
         >
           <FaBook size={25} className="pr-2" />
           Manage Courses
+        </NavLink>
+        <NavLink
+          to="/certificate-management"
+          className={({ isActive }) =>
+            isActive ? navLinkActiveCss : navLinkNotActiveCss
+          }
+        >
+          <FaCertificate size={25} className="pr-2" />
+          Manage Certificates
         </NavLink>
         <button
           className={navLinkBtnCss}
@@ -147,41 +156,6 @@ const Sidebar = (props) => {
               }
             >
               Manage Students
-            </NavLink>
-          </>
-        )}
-        <button
-          className={navLinkBtnCss}
-          onClick={() => {
-            setIsCertificationOpen((prevState) => !prevState);
-          }}
-        >
-          <div className="flex items-center">
-            <FaCertificate size={26} className="pr-2" />
-            <p>Certification</p>
-          </div>
-          <FaAngleDown
-            size={20}
-            className={`pr-1 ${isCertificationOpen ? "rotate-180" : ""} `}
-          />
-        </button>
-        {isCertificationOpen && (
-          <>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Generate Certificate
-            </NavLink>
-            <NavLink
-              to="/certificate-management"
-              className={({ isActive }) =>
-                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
-              }
-            >
-              Manage Certificate
             </NavLink>
           </>
         )}
