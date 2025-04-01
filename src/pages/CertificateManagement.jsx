@@ -103,7 +103,7 @@ const CertificateManagement = () => {
             <Modal
               isOpen={isModalOpen}
               onClose={closeModal}
-              title="Generate New ID Card"
+              title="Generate New Certificate"
             >
               <SearchBar onSearch={handleCertificateSearch} />
               <table className="w-full mt-4 text-white">

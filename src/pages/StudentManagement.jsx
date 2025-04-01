@@ -79,7 +79,7 @@ const StudentManagement = () => {
                 <tr className={darkMode ? "bg-black" : "bg-blue-900"}>
                   <th className="p-2 text-left">S/N</th>
                   <th className="p-2 text-left">Name</th>
-                  <th className="p-2 text-left">Student ID</th>
+                  <th className="p-2 text-left">ID</th>
                   <th className="p-2 text-left hidden lg:block">Age</th>
                   <th className="p-2 text-left">Course</th>
                   <th className="p-2 text-left hidden lg:block">Start Date</th>
@@ -103,7 +103,7 @@ const StudentManagement = () => {
                   >
                     <td className="p-2 text-left">{index + 1}</td>
                     <td className="p-2 text-left">{item.Name}</td>
-                    <td className="p-2 text-left">{item.StudentID}</td>
+                    <td className="p-2 text-left">{item.ID}</td>
                     <td className="p-2 text-left hidden lg:block">
                       {item.Age}
                     </td>

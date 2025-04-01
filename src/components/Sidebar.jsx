@@ -142,7 +142,7 @@ const Sidebar = (props) => {
         {isStudentManagementOpen && (
           <>
             <NavLink
-              to="/"
+              to="/add-student"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }
