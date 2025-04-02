@@ -113,9 +113,9 @@ const AddStudent = () => {
           >
             <form
               onSubmit={handleSubmit}
-              className="space-y-4 bg-blue-950 rounded-lg grow max-w-[360px] py-4 px-3 md:max-w-[560px]"
+              className= { darkMode ? "space-y-4 bg-slate-800 rounded-lg grow max-w-[360px] py-4 px-5 md:max-w-[560px]" : "space-y-4 bg-white text-black rounded-lg grow max-w-[360px] py-4 px-5 md:max-w-[560px]"}
             >
-              <h3 className="text-2xl">Register Student</h3>
+              <h3 className="text-4xl">Register Student</h3>
               <div className={inputDivCss}>
                 <label
                   htmlFor="name"
@@ -131,7 +131,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-slate-100 px-2 py-1 focus:border-indigo-500 focus:ring-indigo-500"
                   placeholder="Enter name"
                 />
               </div>
@@ -151,7 +151,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setCourse(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 bg-slate-100 px-2 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                   placeholder="Enter course"
                 />
               </div>
@@ -171,7 +171,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setNumber(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 bg-slate-100 px-2 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                   placeholder="Enter number"
                 />
               </div>
@@ -191,7 +191,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 bg-slate-100 px-2 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                   placeholder="Enter email"
                 />
               </div>
@@ -208,7 +208,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setDateOfBirth(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 bg-slate-100 px-2 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 />
               </div>
               {errors.dateOfBirth && (
