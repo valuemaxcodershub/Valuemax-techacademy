@@ -115,7 +115,7 @@ const AddStudent = () => {
               onSubmit={handleSubmit}
               className="space-y-4 bg-blue-950 rounded-lg grow max-w-[360px] py-4 px-3 md:max-w-[560px]"
             >
-              <h3 className="text-2xl">Register Student</h3>
+              <h3 className="text-2xl text-center admin">Register Student</h3>
               <div className={inputDivCss}>
                 <label
                   htmlFor="name"

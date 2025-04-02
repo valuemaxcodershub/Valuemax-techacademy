@@ -83,7 +83,7 @@ const Sidebar = (props) => {
         }
       >
         <FaCircleUser size={100} className="mx-auto" color="white" />
-        <h3 className="text-2xl text-white">Administrator</h3>
+        <h2 className="text-2xl text-white text-center mt-3 admin">Administrator</h2>
       </div>
       <nav className="flex flex-col mt-2  text-white pl-3 text-lg">
         <NavLink

@@ -3,7 +3,7 @@ import logo from "../assets/valuemax-logo.png";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa6";
 import { BiSolidDoorOpen } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AdminDropDownMenu from "./AdminDropDownMenu";
 import Modal from "./Modal";
 
@@ -59,7 +59,9 @@ const AdminHeader = (props) => {
             : "border-r border-b border-blue-600 p-4 bg-blue-700 min-w-[290px] md:w-[290px] hidden sm:block"
         }
       >
-        <img src={logo} alt="valuemax-logo.png" />
+        <Link to="/">
+          <img src={logo} alt="valuemax-logo.png" />
+        </Link>
       </div>
       <div
         className={
@@ -69,7 +71,9 @@ const AdminHeader = (props) => {
         }
       >
         <div className={props.darkMode ? "sm:hidden p-4" : "sm:hidden p-4"}>
+          <Link to="/">
           <img src={logo} alt="valuemax-logo.png" />
+          </Link>
         </div>
         <div className="flex">
           <button

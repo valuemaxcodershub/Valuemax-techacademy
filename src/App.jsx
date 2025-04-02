@@ -14,7 +14,6 @@ import AdminManagement from "./pages/AdminManagement";
 import CertificateManagement from "./pages/CertificateManagement";
 import IDCardManagement from "./pages/IDCardManagement";
 import Modal from "./components/Modal";
-import Header from "./components/Header";
 import AddStudent from "./pages/AddStudent";
 import AdminHeader from "./components/AdminHeader";
 
