@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import students from "../students.json";
 import admins from "../admins.json";
 import IDCards from "../IDCard.json";
-import Header from "../components/Header";
+import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";
 
@@ -79,7 +79,7 @@ const IDCardManagement = () => {
           : "bg-blue-700 flex flex-col grow"
       }
     >
-      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+      <AdminHeader setDarkMode={setDarkMode} darkMode={darkMode} />
       <div className="flex min-h-screen">
         <div className="flex justify-between w-full">
           <Sidebar mode={darkMode} />

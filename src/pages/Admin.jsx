@@ -7,7 +7,7 @@ import logo from "../assets/valuemax-logo.png";
 import Sidebar from "../components/Sidebar";
 import DashboardLinkButtons from "../components/DashboardLinkButtons";
 import Modal from "../components/Modal";
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+// import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { MdAddCard } from "react-icons/md";
 import AdminDropDownMenu from "../components/AdminDropDownMenu";
 
@@ -102,7 +102,7 @@ const Admin = () => {
               {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </button>
             <button
-              className="w-[100px] bg-white flex rounded-lg justify-between items-center px-2 py-1 my-4 mr-4 text-black"
+              className="w-[110px] bg-white flex rounded-lg justify-between items-center px-2 py-1 my-4 mr-4 text-black"
               onClick={openModal}
             >
               <BiSolidDoorOpen size={20} />

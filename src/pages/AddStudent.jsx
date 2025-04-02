@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
+import AdminHeader from "../components/AdminHeader";
 import Sidebar from "../components/Sidebar";
 
 const AddStudent = () => {
@@ -100,7 +100,7 @@ const AddStudent = () => {
           : "bg-blue-700 flex flex-col grow"
       }
     >
-      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+      <AdminHeader setDarkMode={setDarkMode} darkMode={darkMode} />
       <div className="flex min-h-screen">
         <div className="flex justify-between w-full">
           <Sidebar mode={darkMode} />

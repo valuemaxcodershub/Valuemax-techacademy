@@ -1,7 +1,6 @@
 import Training from "./pages/Training";
 import Admin from "./pages/Admin";
 import Mainlayout from "./layouts/Mainlayout";
-import GenerateID from "./pages/GenerateID";
 import Sidebar from "./components/Sidebar";
 import StudentManagement from "./pages/StudentManagement";
 import { Routes, Route } from "react-router-dom";
@@ -17,6 +16,7 @@ import IDCardManagement from "./pages/IDCardManagement";
 import Modal from "./components/Modal";
 import Header from "./components/Header";
 import AddStudent from "./pages/AddStudent";
+import AdminHeader from "./components/AdminHeader";
 
 function App() {
   return (
@@ -29,7 +29,6 @@ function App() {
       <Route path="*" element={<NotFoundPage/>}/>
       <Route path="/login" element={<Login />} />
       <Route path="/admin" element={<Admin />} />
-      <Route path="/generate-id" element={<GenerateID />} />
       <Route path="/sidebar" element={<Sidebar />} />
       <Route path="/student-management" element={<StudentManagement />} />
       <Route path="/course-management" element={<CourseManagement />} />
@@ -41,7 +40,7 @@ function App() {
       <Route path="/id-card-management" element={<IDCardManagement />} />
       <Route path="/add-student" element={<AddStudent />} />
       <Route path="/modal" element={<Modal />} />
-      <Route path="/header" element={<Header />} />
+      <Route path="/header" element={<AdminHeader />} />
     </Routes>
   );
 }

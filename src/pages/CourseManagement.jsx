@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import courses from "../courses.json";
 import admins from "../admins.json";
-import Header from "../components/Header";
+import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";
 
@@ -75,7 +75,7 @@ const CourseManagement = () => {
           : "bg-blue-700 flex flex-col grow"
       }
     >
-      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+      <AdminHeader setDarkMode={setDarkMode} darkMode={darkMode} />
       <div className="flex min-h-screen">
         <div className="flex justify-between w-full">
           <Sidebar mode={darkMode} />

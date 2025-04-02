@@ -39,9 +39,6 @@ const AdminDropDownMenu = (props) => {
       >
         Manage Admins
       </Link>
-      <Link to="/" className={menuLinkCss} onClick={props.toggleMobileMenu}>
-        Generate Certificate
-      </Link>
       <Link
         to="/certificate-management"
         className={menuLinkCss}
