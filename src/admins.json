@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Ola Adeleke", "ID":11, "Role":"Admin level 2"
+  },
+  {
+    "Name": "Dele Akinola", "ID":14, "Role":"Admin level 1"
+  },
+  {
+    "Name": "Bolu Shola", "ID":35, "Role":"Admin level 1"
+  },
+  {
+    "Name": "Chidera Chineke", "ID":15, "Role":"Admin level 1"
+  },
+  {
+    "Name": "Abiola Ademola", "ID":3, "Role": "Admin level 3"
+  }
+]
