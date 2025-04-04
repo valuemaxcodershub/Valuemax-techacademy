@@ -228,12 +228,12 @@ const Sidebar = (props) => {
               Edit Assignment
             </NavLink>
             <NavLink
-              to="/view-assignment-answers"
+              to="/student-submissions"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }
             >
-              View Student Submission
+              Student Submissions
             </NavLink>
             <NavLink
               to="/outline"

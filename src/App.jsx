@@ -13,9 +13,13 @@ import CoursePage from "./pages/CoursePage";
 import AdminManagement from "./pages/AdminManagement";
 import CertificateManagement from "./pages/CertificateManagement";
 import IDCardManagement from "./pages/IDCardManagement";
+import Assignment from "./pages/Assignment";
 import Modal from "./components/Modal";
 import AddStudent from "./pages/AddStudent";
 import AdminHeader from "./components/AdminHeader";
+import StudentSubmissions from "./pages/StudentSubmissions";
+import Outline from "./pages/Outline";
+import EditAssignment from "./pages/EditAssignments";
 
 function App() {
   return (
@@ -38,6 +42,10 @@ function App() {
       />
       <Route path="/id-card-management" element={<IDCardManagement />} />
       <Route path="/add-student" element={<AddStudent />} />
+      <Route path="/assignment" element={<Assignment />} />
+      <Route path="/student-submissions" element={<StudentSubmissions />} />
+      <Route path="/outline" element={<Outline />} />
+      <Route path="/edit-assignment" element={<EditAssignment />} />
       <Route path="/modal" element={<Modal />} />
       <Route path="/header" element={<AdminHeader />} />
     </Routes>

@@ -108,12 +108,12 @@ const AddStudent = () => {
             className={
               darkMode
                 ? "bg-slate-700 text-white grow p-4 lg:p-6 flex justify-center items-center"
-                : "bg-blue-600 text-white grow p-4 lg:p-6 flex justify-center items-center"
+                : "bg-white text-white grow p-4 lg:p-6 flex justify-center items-center"
             }
           >
             <form
               onSubmit={handleSubmit}
-              className= { darkMode ? "space-y-4 bg-slate-800 rounded-lg grow max-w-[360px] py-4 px-5 md:max-w-[560px]" : "space-y-4 bg-white text-black rounded-lg grow max-w-[360px] py-4 px-5 md:max-w-[560px]"}
+              className= { darkMode ? "space-y-4 bg-slate-800 rounded-2xl grow max-w-[360px] py-4 px-5 md:max-w-[560px]" : "space-y-4 bg-blue-700 text-white rounded-2xl grow max-w-[360px] py-4 px-5 md:max-w-[560px]"}
             >
               <h3 className="text-2xl text-center admin">Register Student</h3>
               <div className={inputDivCss}>
@@ -235,7 +235,7 @@ const AddStudent = () => {
               {/* <button onClick={clearForm}>Clear form</button> */}
               <button
                 type="submit"
-                className="mt-4 w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className={darkMode ? "mt-4 w-full bg-slate-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" : "mt-4 w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"}
               >
                 Submit
               </button>
