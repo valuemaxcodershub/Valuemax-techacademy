@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import admins from "../admins.json";
-import Header from "../components/Header";
+import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
@@ -81,7 +81,7 @@ const AdminManagement = () => {
           : "bg-blue-700 flex flex-col grow"
       }
     >
-      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+      <AdminHeader setDarkMode={setDarkMode} darkMode={darkMode} />
       <div className="flex min-h-screen">
         <div className="flex justify-between w-full">
           <Sidebar mode={darkMode} />

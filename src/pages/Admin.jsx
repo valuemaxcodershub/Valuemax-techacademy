@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { FaMoon, FaSun, FaGraduationCap, FaBars, FaIdCard } from "react-icons/fa6";
+import {
+  FaMoon,
+  FaSun,
+  FaGraduationCap,
+  FaBars,
+  FaIdCard,
+} from "react-icons/fa6";
 import { BiSolidBook, BiSolidDoorOpen } from "react-icons/bi";
 import { GoPerson } from "react-icons/go";
 import { IoIosPeople, IoMdClose, IoMdCreate } from "react-icons/io";
@@ -10,6 +16,7 @@ import Modal from "../components/Modal";
 // import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { MdAddCard } from "react-icons/md";
 import AdminDropDownMenu from "../components/AdminDropDownMenu";
+import { Link } from "react-router-dom";
 
 const Admin = () => {
   const [darkMode, setDarkMode] = useState(
@@ -47,7 +54,7 @@ const Admin = () => {
   const generateCertificateIcon = <IoMdCreate size={70} />;
   const manageCertificateIcon = <FaGraduationCap size={70} />;
   const generateIDCardIcon = <MdAddCard size={70} />;
-  const manageIDCardIcon = <FaIdCard size={70}/>;
+  const manageIDCardIcon = <FaIdCard size={70} />;
 
   const handleLogout = () => {
     // Implement logout logic here
@@ -73,7 +80,9 @@ const Admin = () => {
               : "border-r border-b border-blue-600 p-4 hidden sm:block"
           }
         >
-          <img src={logo} alt="valuemax-logo.png" />
+          <Link to="/">
+            <img src={logo} alt="valuemax-logo.png" />
+          </Link>
         </div>
         <Sidebar mode={darkMode} />
       </div>
@@ -90,7 +99,7 @@ const Admin = () => {
           }
         >
           <div className={darkMode ? "sm:hidden p-4" : "sm:hidden p-4"}>
-            <img src={logo} alt="valuemax-logo.png" />
+            <Link to="/"><img src={logo} alt="valuemax-logo.png" /></Link>
           </div>
           <div className="flex">
             <button
@@ -102,14 +111,20 @@ const Admin = () => {
               {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </button>
             <button
-              className="w-[100px] bg-white flex rounded-lg justify-between items-center px-2 py-1 my-4 mr-4 text-black"
+              className="w-[110px] bg-white flex rounded-lg justify-between items-center px-2 py-1 my-4 mr-4 text-black"
               onClick={openModal}
             >
               <BiSolidDoorOpen size={20} />
               Log Out
             </button>
-            <Modal isOpen={isModalOpen} onClose={closeModal} title="Confirm Logout">
-              <p className="dark:text-white">Are you sure you want to log out?</p>
+            <Modal
+              isOpen={isModalOpen}
+              onClose={closeModal}
+              title="Confirm Logout"
+            >
+              <p className="dark:text-white">
+                Are you sure you want to log out?
+              </p>
               <div className="flex justify-end mt-4">
                 <button
                   onClick={closeModal}
@@ -134,10 +149,15 @@ const Admin = () => {
           </button>
         </div>
         {isMobileMenuOpen && (
-          <AdminDropDownMenu darkMode={darkMode} toggleMobileMenu={toggleMobileMenu} setIsMobileMenuOpen={setIsMobileMenuOpen} isMobileMenuOpen={isMobileMenuOpen}/>
+          <AdminDropDownMenu
+            darkMode={darkMode}
+            toggleMobileMenu={toggleMobileMenu}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+            isMobileMenuOpen={isMobileMenuOpen}
+          />
         )}
         <div className="m-6 flex flex-col items-start">
-          <h2 className="text-4xl mb-4 text-white">Dashboard</h2>
+          <h2 className="text-4xl mb-4 text-white admin-2">Dashboard</h2>
           <div className="flex flex-row flex-wrap">
             <DashboardLinkButtons
               destination="/student-management"

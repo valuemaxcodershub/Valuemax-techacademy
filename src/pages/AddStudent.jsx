@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
+import AdminHeader from "../components/AdminHeader";
 import Sidebar from "../components/Sidebar";
 
 const AddStudent = () => {
@@ -100,7 +100,7 @@ const AddStudent = () => {
           : "bg-blue-700 flex flex-col grow"
       }
     >
-      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+      <AdminHeader setDarkMode={setDarkMode} darkMode={darkMode} />
       <div className="flex min-h-screen">
         <div className="flex justify-between w-full">
           <Sidebar mode={darkMode} />
@@ -115,7 +115,7 @@ const AddStudent = () => {
               onSubmit={handleSubmit}
               className= { darkMode ? "space-y-4 bg-slate-800 rounded-lg grow max-w-[360px] py-4 px-5 md:max-w-[560px]" : "space-y-4 bg-white text-black rounded-lg grow max-w-[360px] py-4 px-5 md:max-w-[560px]"}
             >
-              <h3 className="text-4xl">Register Student</h3>
+              <h3 className="text-2xl text-center admin">Register Student</h3>
               <div className={inputDivCss}>
                 <label
                   htmlFor="name"
