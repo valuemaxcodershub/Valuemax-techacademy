@@ -70,7 +70,7 @@ const Sidebar = (props) => {
   const outlineNavLinkNotActiveCss =
     "pl-2 text-left pt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pr-2";
   return (
-    <aside className="min-w-[290px] md:w-[290px] hidden sm:block">
+    <aside className={darkMode ? "min-w-[290px] md:w-[290px] bg-sidebar-dark hidden sm:block" : "min-w-[290px] md:w-[290px] hidden sm:block"}>
       <div
         className={
           darkMode

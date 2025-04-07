@@ -86,7 +86,7 @@ const IDCardManagement = () => {
           <main
             className={
               darkMode
-                ? "bg-slate-700 text-white grow p-4 lg:p-6"
+                ? "bg-admin-dark text-white grow p-4 lg:p-6"
                 : "bg-blue-600 text-white grow p-4 lg:p-6"
             }
           >

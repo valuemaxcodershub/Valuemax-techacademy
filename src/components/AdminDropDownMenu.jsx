@@ -7,7 +7,7 @@ const AdminDropDownMenu = (props) => {
     <div
       className={
         props.darkMode
-          ? "sm:hidden bg-gray-800 p-4"
+          ? "sm:hidden bg-gray-950 p-4"
           : "sm:hidden bg-blue-800 p-4"
       }
     >

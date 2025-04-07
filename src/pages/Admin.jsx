@@ -51,7 +51,6 @@ const Admin = () => {
   const studentIcon = <GoPerson size={70} />;
   const courseIcon = <BiSolidBook size={70} />;
   const adminIcon = <IoIosPeople size={70} />;
-  const generateCertificateIcon = <IoMdCreate size={70} />;
   const manageCertificateIcon = <FaGraduationCap size={70} />;
   const generateIDCardIcon = <MdAddCard size={70} />;
   const manageIDCardIcon = <FaIdCard size={70} />;
@@ -66,17 +65,15 @@ const Admin = () => {
 
   return (
     <div
-      className={
-        darkMode
-          ? "flex flex-row bg-slate-800 roboto-uniquifier min-h-screen"
-          : "flex flex-row bg-blue-700 roboto-uniquifier min-h-screen"
-      }
+      className="flex flex-row roboto-uniquifier min-h-screen"
     >
-      <div>
+      <div className={
+        darkMode ? "bg-sidebar-dark" : "hidden sm:block bg-blue-700"
+      }>
         <div
           className={
             darkMode
-              ? "border-r border-b border-slate-500 p-4 hidden sm:block"
+              ? "border-r border-b bg-black border-slate-500 p-4 hidden sm:block"
               : "border-r border-b border-blue-600 p-4 hidden sm:block"
           }
         >
@@ -88,14 +85,14 @@ const Admin = () => {
       </div>
       <main
         className={
-          darkMode ? "flex bg-slate-700 flex-col" : "flex bg-blue-600 flex-col"
+          darkMode ? "flex bg-admin-dark flex-col" : "flex bg-blue-600 flex-col"
         }
       >
         <div
           className={
             darkMode
-              ? "bg-slate-800 h-[69px] w-full flex justify-between sm:justify-end"
-              : "bg-blue-700 h-[69px] w-full flex justify-between sm:justify-end"
+              ? "bg-black h-[72px] w-full flex justify-between sm:justify-end"
+              : "bg-blue-700 h-[72px] w-full flex justify-between sm:justify-end"
           }
         >
           <div className={darkMode ? "sm:hidden p-4" : "sm:hidden p-4"}>
@@ -173,11 +170,6 @@ const Admin = () => {
               destination="/admin-management"
               icon={adminIcon}
               title="Admin Management"
-            />
-            <DashboardLinkButtons
-              destination="/"
-              icon={generateCertificateIcon}
-              title="Generate Certificate"
             />
             <DashboardLinkButtons
               destination="/certificate-management"

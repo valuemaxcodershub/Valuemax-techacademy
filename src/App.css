@@ -8,6 +8,15 @@
   /* display: flex; */
 }
 
+.bg-admin-dark {
+  background-image: url("src/assets/images/AdminDarkBG.jpg");
+  background-size: cover;
+}
+.bg-sidebar-dark {
+  background-image: url("src/assets/images/AdminDarkSideBar.jpg");
+  background-size: cover;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
