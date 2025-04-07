@@ -115,6 +115,66 @@ body{
    background: white;
    color: white;
 }
+.modal{
+   z-index: 1000;
+   
+}
+.modal form{
+   margin: 0px auto;
+   width: 90%;
+   background: rgba(255, 255, 255, 0.03);
+   backdrop-filter: blur(6px);
+   border-radius: 50px;
+   padding: 15px;
+   display: flex;
+   justify-content: center;
+
+}
+.modal form input{
+   width: 80%;
+   margin: 0px 10px;
+   padding: 10px;
+   border: none;
+   outline: none;
+   background: transparent;
+   color: gainsboro;
+}
+.modal form button{
+   cursor: pointer;
+   margin: 0px 10px;
+   padding: 10px 25px;
+   background: transparent;
+   border: 2px solid gainsboro;
+   color: gainsboro;
+   font-weight: 600;
+   border-radius: 20px;
+}
+.dropdown{
+   ul{
+      width: 200px;
+      position: absolute;
+      background: #18192E;
+      backdrop-filter: blur(20px);
+      border-radius: 5px;
+      transition: all 10s ease-in-out 0s;
+   }
+   .opened{
+      visibility: visible;
+   }
+   .closed{
+      visibility: hidden;
+      display: none;
+   }
+}
+.dropdown ul a{
+   border-radius: 5px;
+}
+.dropdown .icon{
+   display: inline-block;
+   text-shadow: 5px 0px 0px black;
+   color: #F2B636;
+}
+
 /* HEADER SECTION ENDS HERE */
 
 /* NOT FOUND PAGE STARTS HERE */
@@ -152,9 +212,9 @@ body{
    background-attachment: fixed;
 }
 .hero-box>div{
-   padding: 100px 0px;
+   padding: 100px 0px ;
    width: 100%;
-   height: 500px;
+   /* height: 500px; */
    text-align: center;
    display: flex;
    flex-direction: column;
@@ -296,7 +356,6 @@ body{
       text-align: center;
       color: gainsboro;
    }
-
 }
 
 .courseSection .inner .innerscroll{
@@ -358,12 +417,19 @@ body{
 
    p{
       height: 300px;
+      max-height: fit-content;
       overflow-y: auto;
       scrollbar-width: thin;
+
+      a{
+         margin-top: 10px;
+         color: #F2B636;
+         display: block;
+      }
    }
 }
 .test-each>div{
-   margin-top: 30px;
+   margin-top: 10px;
    display: flex;
    flex-direction: row;
    justify-content: flex-start;
@@ -388,6 +454,100 @@ body{
    color: #FEFEFE;
 }
 /* TESTIMONIAL ENDS HERE */
+
+/* STUDENT LOGIN STARTS HERE */
+.studentlog{
+   width: 100%;
+   position: fixed;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background-image: url(../images/log-wp5.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 100%;
+}
+.studenthead{
+   padding: 20px 0px;
+}
+.studentlog .formsec{
+   background-color: rgba(255, 255, 255, 0.08);
+   width: 500px;
+   margin-left: auto;
+   margin-right: auto;
+   backdrop-filter: blur(7px);
+   padding: 50px 20px;
+   box-shadow: 0px 0px 10px 2px #465579;
+   border-radius: 5px;
+}
+.studentlog h2{
+   font-family: 'Exo', sans-serif;
+   font-weight: 600;
+   font-size: 40px;
+   text-align: center;
+   color: #0E1220;
+}
+.studentlog form{
+   display: flex;
+   flex-direction: column;
+   padding: 20px 0px;
+}
+.studentlog form .inp{
+   width: 100%;
+   border-bottom: 2px solid gainsboro ;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 30px;
+}
+.studentlog label{
+   font-size: 16px;
+}
+.studentlog input{
+   border: none;
+   outline: none;
+   width: 100%;
+   padding: 15px 0px;
+}
+.studentlog .forget{
+   text-align: right;
+   text-decoration: underline;
+
+   a{
+      font-size: 13px;
+   }
+}
+.studentlog button{
+   background: rgba(14, 18, 32, 0.8);
+   margin-top: 15px;
+   padding: 10px;
+
+   &:hover{
+      background: #0E1220;
+   }
+}
+.studentlog p{
+   text-align: center;
+   font-size: 13px;
+   a{
+      font-size: 13px;
+      text-decoration: underline;
+   }
+}
+.studentlog .errormess{
+   color: rgb(255, 0, 0);
+   margin-top: -25px;
+   margin-bottom: 30px;
+   font-size: 15px;
+   text-shadow: 2px 0px 1px white;
+}
+.logfooter{
+   text-align: center;
+   line-height: 50px;
+   background-color: #0E1220;
+}
+/* STUDENTS LOGIN ENDS HERE  */
 
 /*FOOTER STARTS HERE*/
 .footer{
@@ -467,7 +627,7 @@ body{
          text-decoration: none;
          display: block;
          font-size: 13px;
-         font-weight: 600;
+         /* font-weight: 600; */
          color: #E2DED5;
 
          &:hover{

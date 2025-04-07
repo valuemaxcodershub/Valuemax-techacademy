@@ -7,6 +7,7 @@ const Course = ({course, images, index}) => {
    const [showFullDescription, setShowFullDescription] = useState(false)
 
    let description = course.description
+   // console.log(description);
 
    if(!showFullDescription){
       description = description.substring(0, 120) + "..."

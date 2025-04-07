@@ -1,6 +1,6 @@
 import React from 'react'
-import "../assets/css/style.css"
-import "../assets/css/smallScreen.css"
+// import "../assets/css/style.css"
+// import "../assets/css/smallScreen.css"
 import {Link } from "react-router-dom";
 
 const Hero = () => {
@@ -20,7 +20,7 @@ const Hero = () => {
                <Link to="/">Get Started for Free</Link>
             </div>
          </div>
-         <div className='cert'>
+         {/* <div className='cert'>
             <div>
                <h2>
                   Verify Past Students' Certificates  
@@ -30,7 +30,7 @@ const Hero = () => {
                   <button type='submit'>Verify</button>
                </form>
             </div>
-         </div>
+         </div> */}
       </div>
     </div>
   )
