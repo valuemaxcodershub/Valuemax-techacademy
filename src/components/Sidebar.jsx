@@ -12,15 +12,11 @@ import {
   FaDoorOpen,
 } from "react-icons/fa6";
 import darkMode from "./Header";
-import { FaFileAlt } from "react-icons/fa";
 import { MdAssignment } from "react-icons/md";
 import Modal from "./Modal";
 
 const Sidebar = (props) => {
-  const [isCertificationOpen, setIsCertificationOpen] = useState(false);
-  const [isCourseManagementOpen, setIsCourseManagementOpen] = useState(false);
   const [isStudentManagementOpen, setIsStudentManagementOpen] = useState(false);
-  const [isAdminManagementOpen, setIsAdminManagementOpen] = useState(false);
   const [isIDCardManagementOpen, setIsIDCardManagementOpen] = useState(false);
   const [isAssignmentOpen, setIsAssignmentOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -185,7 +181,7 @@ const Sidebar = (props) => {
               Manage ID Cards
             </NavLink>
             <NavLink
-              to="/id-card/"
+              to="/personal-id-card/"
               className={({ isActive }) =>
                 isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
               }

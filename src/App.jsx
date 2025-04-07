@@ -20,6 +20,7 @@ import AdminHeader from "./components/AdminHeader";
 import StudentSubmissions from "./pages/StudentSubmissions";
 import Outline from "./pages/Outline";
 import EditAssignment from "./pages/EditAssignments";
+import PersonalIDCard from "./pages/PersonalIDCard";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         element={<CertificateManagement />}
       />
       <Route path="/id-card-management" element={<IDCardManagement />} />
+      <Route path="/personal-id-card" element={<PersonalIDCard />} />
       <Route path="/add-student" element={<AddStudent />} />
       <Route path="/assignment" element={<Assignment />} />
       <Route path="/student-submissions" element={<StudentSubmissions />} />

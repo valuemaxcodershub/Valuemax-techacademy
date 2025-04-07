@@ -163,6 +163,10 @@ h1 {
   font-size: 1.5rem;
 }
 
+.bold{
+  font-weight: 600;
+}
+
 .admin-2 {
   font-size: 2rem;
 }
