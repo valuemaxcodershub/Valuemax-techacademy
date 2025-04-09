@@ -65,15 +65,11 @@ const Sidebar = (props) => {
     "pl-9 text-left pt-1 mr-6 border-b border-yellow-200 text-cyan-400 rounded-lg pr-2";
   const btnNavLinkNotActiveCss =
     "pl-9 text-left pt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pr-2";
-  const outlineNavLinkActiveCss =
-    "pl-2 text-left pt-1 mr-6 border-b border-yellow-200 text-cyan-400 rounded-lg pr-2";
-  const outlineNavLinkNotActiveCss =
-    "pl-2 text-left pt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pr-2";
   return (
-    <aside className={darkMode ? "min-w-[290px] md:w-[290px] bg-sidebar-dark hidden sm:block" : "min-w-[290px] md:w-[290px] hidden sm:block"}>
+    <aside className={props.mode ? "min-w-[290px] md:w-[290px] bg-sidebar-dark hidden sm:block" : "min-w-[290px] md:w-[290px] hidden sm:block"}>
       <div
         className={
-          darkMode
+          props.mode
             ? "p-5 border-b border-slate-500"
             : "p-5 border-b border-blue-600"
         }
@@ -93,15 +89,6 @@ const Sidebar = (props) => {
           Dashboard
         </NavLink>
 
-        <NavLink
-          to="/admin-management"
-          className={({ isActive }) =>
-            isActive ? navLinkActiveCss : navLinkNotActiveCss
-          }
-        >
-          <FaUserTie size={25} className="pr-2" />
-          Manage Admins
-        </NavLink>
         <NavLink
           to="/course-management"
           className={({ isActive }) =>
@@ -155,6 +142,16 @@ const Sidebar = (props) => {
             </NavLink>
           </>
         )}
+        
+        <NavLink
+          to="/admin-management"
+          className={({ isActive }) =>
+            isActive ? navLinkActiveCss : navLinkNotActiveCss
+          }
+        >
+          <FaUserTie size={25} className="pr-2" />
+          Manage Admins
+        </NavLink>
         <button
           className={navLinkBtnCss}
           onClick={() => {

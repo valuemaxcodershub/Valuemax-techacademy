@@ -8,13 +8,24 @@
   /* display: flex; */
 }
 
-.bg-admin-dark {
-  background-image: url("src/assets/images/AdminDarkBG.jpg");
-  background-size: cover;
+.bg-admin-light {
+  background-image: url("src/assets/images/AdminLightBG.jpg");
+  background-size: auto;
 }
+
+.bg-sidebar-light {
+  background-image: url("src/assets/images/AdminLightSideBarBG-2.jpg");
+  background-size: auto;
+}
+
+.bg-admin-dark {
+  background-image: url("src/assets/images/a-dark-background-image-cut-2.jpg");
+  background-size: auto;
+}
+
 .bg-sidebar-dark {
-  background-image: url("src/assets/images/AdminDarkSideBar.jpg");
-  background-size: cover;
+  background-image: url("src/assets/images/AdminDarkSideBarBG.jpg");
+  background-size: auto;
 }
 
 .logo {
