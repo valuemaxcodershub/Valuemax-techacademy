@@ -17,6 +17,7 @@ import Modal from "./Modal";
 
 const Sidebar = (props) => {
   const [isStudentManagementOpen, setIsStudentManagementOpen] = useState(false);
+  const [isAdminManagementOpen, setIsAdminManagementOpen] = useState(false);
   const [isIDCardManagementOpen, setIsIDCardManagementOpen] = useState(false);
   const [isAssignmentOpen, setIsAssignmentOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,17 +57,23 @@ const Sidebar = (props) => {
     console.log("It works");
   }, [darkMode]);
   const navLinkActiveCss =
-    "flex pt-1 justify-items-end mr-6 border-b border-yellow-200 text-cyan-400 rounded-lg pl-2 pr-2 pb-1";
+    "flex pt-1 justify-items-end mr-6 text-cyan-400 rounded-lg pl-2 pr-2 pb-1";
   const navLinkNotActiveCss =
-    "flex pt-1 justify-items-end mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pl-2 pr-2";
+    "flex pt-1 justify-items-end mr-6 hover:text-cyan-400 rounded-lg pl-2 pr-2";
   const navLinkBtnCss =
-    "bg-transparent flex justify-between items-center pt-0 mt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pl-2 pr-2 hide-outline pb-1";
+    "bg-transparent flex justify-between items-center pt-0 mt-1 mr-6 hover:text-cyan-400 rounded-lg pl-2 pr-2 hide-outline pb-1";
   const btnNavLinkActiveCss =
-    "pl-9 text-left pt-1 mr-6 border-b border-yellow-200 text-cyan-400 rounded-lg pr-2";
+    "pl-9 text-left pt-1 mr-6 text-cyan-400 rounded-lg pr-2";
   const btnNavLinkNotActiveCss =
-    "pl-9 text-left pt-1 mr-6 hover:border-b hover:border-yellow-200 hover:text-cyan-400 rounded-lg pr-2";
+    "pl-9 text-left pt-1 mr-6 hover:text-cyan-400 rounded-lg pr-2";
   return (
-    <aside className={props.mode ? "min-w-[290px] md:w-[290px] bg-sidebar-dark hidden sm:block" : "min-w-[290px] md:w-[290px] hidden sm:block"}>
+    <aside
+      className={
+        props.mode
+          ? "min-w-[290px] md:w-[290px] bg-sidebar-dark hidden sm:block"
+          : "min-w-[290px] md:w-[290px] hidden sm:block"
+      }
+    >
       <div
         className={
           props.mode
@@ -75,7 +82,9 @@ const Sidebar = (props) => {
         }
       >
         <FaCircleUser size={100} className="mx-auto" color="white" />
-        <h2 className="text-2xl text-white text-center mt-3 admin">Administrator</h2>
+        <h2 className="text-2xl text-white text-center mt-3 admin">
+          Administrator
+        </h2>
       </div>
       <nav className="flex flex-col mt-2  text-white pl-3 text-lg">
         <NavLink
@@ -97,15 +106,6 @@ const Sidebar = (props) => {
         >
           <FaBook size={25} className="pr-2" />
           Manage Courses
-        </NavLink>
-        <NavLink
-          to="/certificate-management"
-          className={({ isActive }) =>
-            isActive ? navLinkActiveCss : navLinkNotActiveCss
-          }
-        >
-          <FaCertificate size={25} className="pr-2" />
-          Manage Certificates
         </NavLink>
         <button
           className={navLinkBtnCss}
@@ -142,16 +142,52 @@ const Sidebar = (props) => {
             </NavLink>
           </>
         )}
-        
         <NavLink
-          to="/admin-management"
+          to="/certificate-management"
           className={({ isActive }) =>
             isActive ? navLinkActiveCss : navLinkNotActiveCss
           }
         >
-          <FaUserTie size={25} className="pr-2" />
-          Manage Admins
+          <FaCertificate size={25} className="pr-2" />
+          Manage Certificates
         </NavLink>
+
+        <button
+          className={navLinkBtnCss}
+          onClick={() => {
+            setIsAdminManagementOpen((prevState) => !prevState);
+          }}
+        >
+          <div className="flex items-center">
+            <FaUserTie size={25} className="pr-2" />
+            <p>Admin Management</p>
+          </div>
+          <FaAngleDown
+            size={20}
+            className={`pr-1 ${isAdminManagementOpen ? "rotate-180" : ""} `}
+          />
+        </button>
+        {isAdminManagementOpen && (
+          <>
+            <NavLink
+              to="/admin-management"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Manage Admins
+            </NavLink>
+            <NavLink
+              to="/role-management/"
+              className={({ isActive }) =>
+                isActive ? btnNavLinkActiveCss : btnNavLinkNotActiveCss
+              }
+            >
+              Manage Role
+            </NavLink>
+          </>
+        )}
+
         <button
           className={navLinkBtnCss}
           onClick={() => {

@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import courses from "../courses.json";
-import admins from "../admins.json";
+import roles from "../roles.json";
 import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
+import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 
-const CourseManagement = () => {
+const RoleManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"
   );
-  const [filteredData, setFilteredData] = useState(courses);
+  const [filteredData, setFilteredData] = useState(roles);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  //Form states
   const [name, setName] = useState("");
-  const [courseCode, setCourseCode] = useState("");
-  const [duration, setDuration] = useState("");
-  const [price, setPrice] = useState("");
+  const [status, setStatus] = useState("");
+  const [jobDescription, setJobDescription] = useState("");
+
+  const editBtnCss = "bg-slate-500 rounded-lg px-3";
+  const deleteBtnCss = "bg-slate-500 rounded-lg px-3";
+
+  const navigate = useNavigate();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -28,32 +31,29 @@ const CourseManagement = () => {
   };
 
   const clearForm = () => {
-    setName("");
-    setTeacher("");
-    setDuration("");
-    setPrice("");
-  };
-
-  const handleSearch = (searchTerm) => {
-    if (!searchTerm) {
-      setFilteredData(courses);
-    } else {
-      const filtered = courses.filter(
-        (item) =>
-          item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.Teacher.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.Duration.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.Price.toString().includes(searchTerm.toLowerCase())
-      );
-      setFilteredData(filtered);
-    }
+    setUsername("");
+    setEmail("");
+    setPassword("");
+    setRole("");
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Add submit logic
-    console.log({ name, teacher, duration, price });
+    // Put Submit logic here
     closeModal();
+  };
+
+  const handleSearch = (searchTerm) => {
+    if (!searchTerm) {
+      setFilteredData(roles);
+    } else {
+      const filtered = roles.filter(
+        (item) =>
+          item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.Status.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredData(filtered);
+    }
   };
 
   useEffect(() => {
@@ -91,52 +91,53 @@ const CourseManagement = () => {
                 className="bg-white text-black rounded-md py-2 px-3 mb-3 "
                 onClick={openModal}
               >
-                Add new Course
+                Add new Role
               </button>
             </div>
             <Modal
               isOpen={isModalOpen}
               onClose={closeModal}
-              title="Add New Course"
+              title="Add New Role"
             >
               <form onSubmit={handleSubmit} className="flex flex-col">
                 <label htmlFor="name" className="mb-2">
-                  Name:
+                  Name:{" "}
                   <input
                     type="text"
+                    name="name"
                     id="name"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
                     className="bg-slate-300 p-2 rounded-md w-full"
                   />
                 </label>
-                <label htmlFor="courseCode" className="mb-2">
-                  Course Code:
-                  <input
-                    type="text"
-                    id="courseCode"
-                    value={courseCode}
-                    onChange={(e) => setCourseCode(e.target.value)}
+
+                <label htmlFor="status" className="mb-2">
+                  Status:
+                  <select
+                    name="status"
+                    id="status"
+                    value={status}
+                    onChange={(e) => {
+                      setStatus(e.target.value);
+                    }}
                     className="bg-slate-300 p-2 rounded-md w-full"
-                  />
+                  >
+                    <option value="active">Active</option>
+                    <option value="suspended">Suspended</option>
+                  </select>
                 </label>
-                <label htmlFor="duration" className="mb-2">
-                  Duration:
-                  <input
-                    type="text"
-                    id="duration"
-                    value={duration}
-                    onChange={(e) => setDuration(e.target.value)}
-                    className="bg-slate-300 p-2 rounded-md w-full"
-                  />
-                </label>
-                <label htmlFor="price" className="mb-2">
-                  Price:
-                  <input
-                    type="number"
-                    id="price"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
+                <label htmlFor="jobDescription" className="mb-2">
+                  Job Description:{" "}
+                  <textarea
+                    name="jobDescription"
+                    id="jobDescription"
+                    value={jobDescription}
+                    onChange={(e) => {
+                      setJobDescription(e.target.value);
+                    }}
                     className="bg-slate-300 p-2 rounded-md w-full"
                   />
                 </label>
@@ -162,9 +163,9 @@ const CourseManagement = () => {
               <thead>
                 <tr className={darkMode ? "bg-black" : "bg-blue-900"}>
                   <th className="p-2 text-left">Name</th>
-                  <th className="p-2 text-left">Teacher</th>
-                  <th className="p-2 text-left">Duration</th>
-                  <th className="p-2 text-left">Price(&#8358;)</th>
+                  <th className="p-2 text-left">Status</th>
+                  <th className="p-2 text-left"></th>
+                  <th className="p-2 text-left"></th>
                 </tr>
               </thead>
               <tbody>
@@ -182,9 +183,27 @@ const CourseManagement = () => {
                     }
                   >
                     <td className="p-2 text-left">{item.Name}</td>
-                    <td className="p-2 text-left">{item.Teacher}</td>
-                    <td className="p-2 text-left">{item.Duration}</td>
-                    <td className="p-2 text-left">{item.Price}</td>
+                    <td className="p-2 text-left">{item.Status}</td>
+                    <td className="p-2 text-left">
+                      <button
+                        onClick={() => {
+                          navigate(`/edit-role/${item.ID}`);
+                        }}
+                        className={editBtnCss}
+                      >
+                        Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => {
+                          // Delete logic here
+                        }}
+                        className={deleteBtnCss}
+                      >
+                        Delete
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -196,4 +215,4 @@ const CourseManagement = () => {
   );
 };
 
-export default CourseManagement;
+export default RoleManagement;

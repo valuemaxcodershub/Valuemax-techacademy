@@ -21,6 +21,7 @@ import StudentSubmissions from "./pages/StudentSubmissions";
 import Outline from "./pages/Outline";
 import EditAssignment from "./pages/EditAssignments";
 import PersonalIDCard from "./pages/PersonalIDCard";
+import RoleManagement from "./pages/RoleManagement";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
       <Route path="/student-management" element={<StudentManagement />} />
       <Route path="/course-management" element={<CourseManagement />} />
       <Route path="/admin-management" element={<AdminManagement />} />
+      <Route path="/role-management" element={<RoleManagement />} />
       <Route
         path="/certificate-management"
         element={<CertificateManagement />}
