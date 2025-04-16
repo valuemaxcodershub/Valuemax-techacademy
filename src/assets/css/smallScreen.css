@@ -59,6 +59,9 @@
    .dropdown ul a{
       border-radius: 0px;
    }
+   .dropdown .icon{
+      color: gainsboro;
+   }
    /* header section ends here */
 
    /* 'hero section here */
@@ -103,6 +106,14 @@
    /* courses section ends */
 
    /* testimonial section */
+   .carousel>button{
+      padding: 10px;
+      .ca-icon{
+         /* background: rebeccapurple; */
+         width: 20px;
+         height: 20px;
+      }
+   }
    .test-box .test-each{
       width: fit-content;
    }
@@ -121,7 +132,7 @@
    }
    .studentlog .formsec{
       width: 100%;
-      padding: 50px 10px;
+      padding: 50px 20px;
    }
    /* STUDENT LOGIN ENDS HERE */
 
