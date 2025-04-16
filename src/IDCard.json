@@ -2,54 +2,68 @@
   {
     "Name": "Ola Adeleke",
     "ID": 11,
+    "Course": "Front-end Programming",
     "Role": "Admin level 2",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Dele Akinola",
     "ID": 14,
+    "Course": "Data Science",
     "Role": "Admin level 1",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Chidera Chineke",
     "ID": 15,
+    "Course": "Back-end Programming",
     "Role": "Admin level 1",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Abiola Ademola",
     "ID": 3,
+    "Course": "UI/UX Product Design",
     "Role": "Admin level 3",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Adeshola Destiny",
     "ID": 233546,
+    "Course": "Mobile App Development",
+    "Role": "Student",
     "StartDate": "24-03-2025",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Dare Tobiloba",
     "ID": 230567,
+    "Course": "UI/UI Design",
+    "Role": "Student",
     "StartDate": "12-12-2023",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Chidera Ngozi",
     "ID": 240342,
+    "Course": "Data Science",
+    "Role": "Student",
     "StartDate": "13-02-2025",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Olu Damien",
     "ID": 230564,
+    "Course": "Back-end Programming",
+    "Role": "Student",
     "StartDate": "09-01-2025",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   },
   {
     "Name": "Shaun Michael",
     "ID": 234567,
+    "Course": "Cyber Security",
+    "Role": "Student",
     "StartDate": "12-012-2024",
     "IDCardDownloadLink": "https://www.google.com.ng/"
   }

@@ -35,6 +35,13 @@ const IDCardManagement = () => {
       setFilteredData(filtered);
     }
   };
+
+  const handleIDCardGeneration = (event) => {
+    event.target.preventDefault();
+    // id card generation logic
+    closeModal();
+  }
+
   const handleIDSearch = (searchTerm) => {
     if (!searchTerm) {
       setFilteredIDData(null);
@@ -103,45 +110,16 @@ const IDCardManagement = () => {
               onClose={closeModal}
               title="Generate New ID Card"
             >
-              <SearchBar onSearch={handleIDSearch} />
-              <table className="w-full mt-4 text-white">
-                <thead>
-                  <tr className={darkMode ? "bg-slate-950" : "bg-blue-900"}>
-                    <th className="p-2 text-left">Name</th>
-                    <th className="p-2 text-left">ID</th>
-                    <th className="p-2 text-left"></th>
-                  </tr>
-                </thead>
-                <tbody className="text-white">
-                  {filteredIDData?.map((item, index) => (
-                    <tr
-                      key={index}
-                      className={
-                        index % 2 === 0
-                          ? darkMode
-                            ? "bg-gray-800"
-                            : "bg-blue-700"
-                          : darkMode
-                          ? "bg-gray-900"
-                          : "bg-blue-800"
-                      }
-                    >
-                      <td className="p-2 text-left">{item.Name}</td>
-                      <td className="p-2 text-left">{item.ID}</td>
-                      <td className="p-2 text-left">
-                        <button
-                          className="py-1 px-3 bg-white rounded-md text-black"
-                          onClick={() => {
-                            console.log(item);
-                          }}
-                        >
-                          Generate
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <form onSubmit={handleIDCardGeneration}>
+              <select name="idCard" id="certificate-select" className="w-full">
+                {filteredData.map((item, index) => (
+                  <option value={item.Course}>{item.Course}</option>
+                ))}
+              </select>
+              <div className="flex justify-end mt-4">
+                <button type="submit" className="bg-blue-600 p-2 rounded-xl text-white mt-4">Generate</button>
+              </div>
+              </form>
             </Modal>
             <SearchBar onSearch={handleSearch} />
             <table className="w-full mt-4">
