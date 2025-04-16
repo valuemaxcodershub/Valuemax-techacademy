@@ -6,7 +6,6 @@ import StudentManagement from "./pages/StudentManagement";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import CourseManagement from "./pages/CourseManagement";
-import Login from "./pages/Login";
 import CoursesPage from "./pages/CoursesPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import CoursePage from "./pages/CoursePage";
@@ -17,6 +16,8 @@ import Assignment from "./pages/Assignment";
 import Modal from "./components/Modal";
 import AddStudent from "./pages/AddStudent";
 import AdminHeader from "./components/AdminHeader";
+import StudentLogin from "./pages/StudentLogin";
+import AdminLogin from "./pages/AdminLogin";
 import StudentSubmissions from "./pages/StudentSubmissions";
 import Outline from "./pages/Outline";
 import EditAssignment from "./pages/EditAssignments";
@@ -32,7 +33,8 @@ function App() {
         <Route path="/courses/:id" element={<CoursePage/>}/>
       </Route>
       <Route path="*" element={<NotFoundPage/>}/>
-      <Route path="/login" element={<Login />} />
+      <Route path="/student-login" element={<StudentLogin/>}/>
+      <Route path="/admin-login" element={<AdminLogin/>}/>
       <Route path="/admin" element={<Admin />} />
       <Route path="/sidebar" element={<Sidebar />} />
       <Route path="/student-management" element={<StudentManagement />} />

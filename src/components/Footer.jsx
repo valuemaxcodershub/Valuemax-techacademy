@@ -8,6 +8,7 @@ import {
   FaTwitter, 
   FaInstagram
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -27,10 +28,10 @@ const Footer = () => {
             Stay updated
           </h2>
           <div className='foricons'>
-            <a href="#"><FaFacebook/></a>
-            <a href="#"><FaTwitter/></a>
-            <a href="#"><FaInstagram/></a>
-            <a href="#"><FaWhatsapp/></a>
+            <Link to="/"><FaFacebook/></Link>
+            <Link to="/"><FaTwitter/></Link>
+            <Link to="/"><FaInstagram/></Link>
+            <Link to="/"><FaWhatsapp/></Link>
           </div>
         </div>
 
@@ -40,11 +41,11 @@ const Footer = () => {
           <div className='item'>
             <h1>About Us </h1>
             <ul>
-              <li><a href="#course">About Us</a></li>
-              <li><a href="#course">Hosting & Domain</a></li>
-              <li><a href="#course">Buy Data</a></li>
-              <li><a href="#course">News</a></li>
-              <li><a href="#course">Contact Us</a></li>
+              <li><Link to="/courses">About Us</Link></li>
+              <li><Link to="/courses">Hosting & Domain</Link></li>
+              <li><Link to="/courses">Buy Data</Link></li>  
+              <li><Link to="/courses">News</Link></li>
+              <li><Link to="/courses">Contact Us</Link></li>
             </ul>
           </div>
         </div>
@@ -55,18 +56,18 @@ const Footer = () => {
           <div className='item'>
             <h1>Programming</h1>
             <ul>
-              <li><a href="#course">Front-End Web Dev</a></li>
-              <li><a href="#course">Back-End Web Dev</a></li>
-              <li><a href="#course">Python Programming</a></li>
-              <li><a href="#course">Data Science & Machine Learning (M.L)</a></li>
-              <li><a href="#course">Data Analysis</a></li>
-              <li><a href="#course">Mobile App Dev</a></li>
-              <li><a href="#course">Desktop Application</a></li>
-              <li><a href="#course">Computer Networking</a></li>
-              <li><a href="#course">DevOps/Cloud Computing</a></li>
-              <li><a href="#course">Cyber Security</a></li>
-              <li><a href="#course">Web 3: Blockchain Dev</a></li>
-              <li><a href="#course">Artificial Intelligence (A.I), Robotic, <br /> Automation, IOT & Embedded system</a></li>
+              <li><Link to="/courses">Front-End Web Dev</Link></li>
+              <li><Link to="/courses">Back-End Web Dev</Link></li>
+              <li><Link to="/courses">Python Programming</Link></li>
+              <li><Link to="/courses">Data Science & Machine Learning (M.L)</Link></li>
+              <li><Link to="/courses">Data Analysis</Link></li>
+              <li><Link to="/courses">Mobile App Dev</Link></li>
+              <li><Link to="/courses">Desktop Application</Link></li>
+              <li><Link to="/courses">Computer Networking</Link></li>
+              <li><Link to="/courses">DevOps/Cloud Computing</Link></li>
+              <li><Link to="/courses">Cyber Security</Link></li>
+              <li><Link to="/courses">Web 3: Blockchain Dev</Link></li>
+              <li><Link to="/courses">Artificial Intelligence (A.I), Robotic, <br /> Automation, IOT & Embedded system</Link></li>
             </ul>
           </div>
         </div>
@@ -77,15 +78,15 @@ const Footer = () => {
           <div className='item'>
             <h1>Non-Programming</h1>
             <ul>
-              <li><a href="#course">Foundation Computer Training</a></li>
-              <li><a href="#course">Professional Graphics and 3D Designs</a></li>
-              <li><a href="#course">Video Editing/ Motion Graphics, 3D Animation, and White Boarding</a></li>
-              <li><a href="#course">UI/UX</a></li>
-              <li><a href="#course">Auto card for Architectural Design</a></li>
-              <li><a href="#course">Sage & other Accounting Software</a></li>
-              <li><a href="#course">Artificial Intelligence apps/tools usage</a></li>
-              <li><a href="#course">CMS Based Web Design</a></li>
-              <li><a href="#course">Digital Marketing </a></li>
+              <li><Link to="/courses">Foundation Computer Training</Link></li>
+              <li><Link to="/courses">Professional Graphics and 3D Designs</Link></li>
+              <li><Link to="/courses">Video Editing/ Motion Graphics, 3D Animation, and White Boarding</Link></li>
+              <li><Link to="/courses">UI/UX</Link></li>
+              <li><Link to="/courses">Auto card for Architectural Design</Link></li>
+              <li><Link to="/courses">Sage & other Accounting Software</Link></li>
+              <li><Link to="/courses">Artificial Intelligence apps/tools usage</Link></li>
+              <li><Link to="/courses">CMS Based Web Design</Link></li>
+              <li><Link to="/courses">Digital Marketing </Link></li>
             </ul>
           </div>
         </div>
@@ -101,7 +102,7 @@ const Footer = () => {
               UI Ojoo Road, Ibadan.
             </p>
             <p>
-              Email: <a href="mailto:admin@valuemaxonline.com">admin@valuemaxonline.com</a>
+              Email: <Link  to="mailto:admin@valuemaxonline.com">admin@valuemaxonline.com</Link>
             </p>
           </div>
         </div>

@@ -4,8 +4,14 @@ import "../assets/css/smallScreen.css"
 import pre from "../assets/images/pre.jpg"
 import olayinka from "../assets/images/olayinka.jpg"
 import ban from "../assets/images/ban.jpg"
+import testimonies from '../testimonies.json'
+import Testimony from './Testimony'
+
 
 const Testimonial = () => {
+   const testiImages = [pre, ban, olayinka]
+   const testimonyListing = testimonies
+
   return (
    // <testimonial
    <div class="serv sides testi" id="testimonial">
@@ -15,7 +21,10 @@ const Testimonial = () => {
          about their experience with our services.
       </p>
       <div class="test-box">
-         <div class="test-each">
+         {testimonyListing.map((testimony, index) => (
+            <Testimony testimony={testimony} images={testiImages} key={testimony.id} index={index}/>
+         ))}
+         {/* <div class="test-each">
             <p>
                I am writing this testimony to express my utmost gratitude and satisfaction
                with the exceptional training experience I had at Valumax Coders' Hub to learn Data Science. It
@@ -82,7 +91,7 @@ const Testimonial = () => {
                </div>
                <h3>BABALOLA OLAYINKA</h3>
             </div>
-         </div>
+         </div> */}
       </div>
    </div>
   )
