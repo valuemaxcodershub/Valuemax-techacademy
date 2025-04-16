@@ -14,7 +14,8 @@ const AddStudent = () => {
   const [dateOfBirth, setDateOfBirth] = useState(undefined);
   const [payment, setPayment] = useState("");
 
-  const inputDivCss = "flex items-end my-8 text-lg";
+  const inputDivCss = "flex justify-between items-end my-8 text-lg";
+  const inputCss = "mt-1 max-w-[21em] block w-full text-black rounded-md border-gray-300 shadow-sm bg-slate-100 px-2 py-1 focus:border-indigo-500 focus:ring-indigo-500";
 
   const clearForm = () => {
     setName("");
@@ -131,7 +132,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-slate-100 px-2 py-1 focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                   placeholder="Enter name"
                 />
               </div>
@@ -151,7 +152,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setCourse(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 bg-slate-100 px-2 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                   placeholder="Enter course"
                 />
               </div>
@@ -171,7 +172,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setNumber(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 bg-slate-100 px-2 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                   placeholder="Enter number"
                 />
               </div>
@@ -191,7 +192,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 bg-slate-100 px-2 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                   placeholder="Enter email"
                 />
               </div>
@@ -208,7 +209,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setDateOfBirth(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 bg-slate-100 px-2 py-1 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                 />
               </div>
               {errors.dateOfBirth && (

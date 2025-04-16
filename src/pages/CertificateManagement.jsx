@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
+import courses from "../courses.json";
 import certificates from "../certificates.json";
 // import admins from "../admins.json";
 // import students from "../students.json";
@@ -12,6 +13,7 @@ const CertificateManagement = () => {
     localStorage.getItem("theme") === "darkMode"
   );
   const [filteredData, setFilteredData] = useState(certificates);
+  const [coursesData, setCoursesData] = useState(courses);
   // const [filteredCertificateData, setFilteredCertificateData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -113,12 +115,12 @@ const CertificateManagement = () => {
             >
               <form onSubmit={handleCertificateGeneration}>
               <select name="certificate" id="certificate-select" className="w-full">
-                {filteredData.map((item, index) => (
-                  <option value={item.Course}>{item.Course}</option>
+                {coursesData.map((item, index) => (
+                  <option value={item.Name}>{item.Name}</option>
                 ))}
               </select>
               <div className="flex justify-end mt-4">
-                <button type="submit" className="bg-blue-600 p-2 rounded-xl text-white mt-4">Generate</button>
+                <button type="submit" className="bg-blue-500 p-2 rounded-xl text-white mt-4 hover:bg-blue-600">Generate</button>
               </div>
               </form>
             </Modal>

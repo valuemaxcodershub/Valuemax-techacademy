@@ -117,7 +117,7 @@ const IDCardManagement = () => {
                 ))}
               </select>
               <div className="flex justify-end mt-4">
-                <button type="submit" className="bg-blue-600 p-2 rounded-xl text-white mt-4">Generate</button>
+                <button type="submit" className="bg-blue-500 p-2 rounded-xl text-white mt-4 hover:bg-blue-600">Generate</button>
               </div>
               </form>
             </Modal>
