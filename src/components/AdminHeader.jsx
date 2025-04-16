@@ -56,7 +56,7 @@ const AdminHeader = (props) => {
         className={
           props.darkMode
             ? "border-r border-b border-slate-500 p-4 bg-black min-w-[290px] md:w-[290px] hidden sm:block"
-            : "border-r border-b border-blue-600 p-4 bg-blue-700 min-w-[290px] md:w-[290px] hidden sm:block"
+            : "border-r border-b border-slate-500 p-4  min-w-[290px] md:w-[290px] hidden sm:block"
         }
       >
         <Link to="/">
@@ -67,7 +67,7 @@ const AdminHeader = (props) => {
         className={
           props.darkMode
             ? "bg-black h-full w-full flex justify-between sm:justify-end"
-            : "bg-blue-700 h-full w-full flex justify-between sm:justify-end"
+            : "bg-slate-400 h-full w-full flex justify-between sm:justify-end"
         }
       >
         <div className={props.darkMode ? "sm:hidden p-4" : "sm:hidden p-4"}>

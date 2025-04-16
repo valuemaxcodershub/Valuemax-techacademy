@@ -71,14 +71,14 @@ const Sidebar = (props) => {
       className={
         props.mode
           ? "min-w-[290px] md:w-[290px] bg-sidebar-dark hidden sm:block"
-          : "min-w-[290px] md:w-[290px] hidden sm:block"
+          : "min-w-[290px] md:w-[290px] bg-sidebar-light hidden sm:block"
       }
     >
       <div
         className={
           props.mode
             ? "p-5 border-b border-slate-500"
-            : "p-5 border-b border-blue-600"
+            : "p-5 border-b border-slate-600"
         }
       >
         <FaCircleUser size={100} className="mx-auto" color="white" />

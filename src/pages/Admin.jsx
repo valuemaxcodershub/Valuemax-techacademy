@@ -71,7 +71,7 @@ const Admin = () => {
           className={
             darkMode
               ? "border-r border-b bg-black border-slate-500 p-4 hidden sm:block"
-              : "border-r border-b border-blue-600 bg-blue-700 p-4 hidden sm:block"
+              : "border-r border-b border-slate-600 p-4 hidden sm:block"
           }
         >
           <Link to="/">
@@ -89,7 +89,7 @@ const Admin = () => {
           className={
             darkMode
               ? "bg-black h-[72px] w-full flex justify-between sm:justify-end"
-              : "bg-blue-700 h-[72px] w-full flex justify-between sm:justify-end"
+              : "bg-slate-400 h-[72px] w-full flex justify-between sm:justify-end"
           }
         >
           <div className={darkMode ? "sm:hidden p-4" : "sm:hidden p-4"}>
@@ -176,7 +176,7 @@ const Admin = () => {
               title="Manage Certificates"
             />
             <DashboardLinkButtons
-              destination="/"
+              destination="/id-card-management"
               icon={manageIDCardIcon}
               title="Manage ID Cards"
             />
