@@ -14,7 +14,8 @@ const AddStudent = () => {
   const [dateOfBirth, setDateOfBirth] = useState(undefined);
   const [payment, setPayment] = useState("");
 
-  const inputDivCss = "flex items-end my-8 text-lg";
+  const inputDivCss = "flex justify-between items-end my-8 text-lg";
+  const inputCss = "mt-1 max-w-[21em] block w-full text-black rounded-md border-gray-300 shadow-sm bg-slate-100 px-2 py-1 focus:border-indigo-500 focus:ring-indigo-500";
 
   const clearForm = () => {
     setName("");
@@ -107,13 +108,13 @@ const AddStudent = () => {
           <main
             className={
               darkMode
-                ? "bg-slate-700 text-white grow p-4 lg:p-6 flex justify-center items-center"
-                : "bg-blue-600 text-white grow p-4 lg:p-6 flex justify-center items-center"
+                ? "bg-admin-dark text-white grow p-4 lg:p-6 flex justify-center items-center"
+                : "bg-white text-white grow p-4 lg:p-6 flex justify-center items-center"
             }
           >
             <form
               onSubmit={handleSubmit}
-              className="space-y-4 bg-blue-950 rounded-lg grow max-w-[360px] py-4 px-3 md:max-w-[560px]"
+              className= { darkMode ? "space-y-4 bg-slate-800 rounded-2xl grow max-w-[360px] py-4 px-5 md:max-w-[560px]" : "space-y-4 bg-blue-700 text-white rounded-2xl grow max-w-[360px] py-4 px-5 md:max-w-[560px]"}
             >
               <h3 className="text-2xl text-center admin">Register Student</h3>
               <div className={inputDivCss}>
@@ -131,7 +132,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                   placeholder="Enter name"
                 />
               </div>
@@ -151,7 +152,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setCourse(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                   placeholder="Enter course"
                 />
               </div>
@@ -171,7 +172,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setNumber(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                   placeholder="Enter number"
                 />
               </div>
@@ -191,7 +192,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                   placeholder="Enter email"
                 />
               </div>
@@ -208,7 +209,7 @@ const AddStudent = () => {
                   onChange={(e) => {
                     setDateOfBirth(e.target.value);
                   }}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className={inputCss}
                 />
               </div>
               {errors.dateOfBirth && (
@@ -235,7 +236,7 @@ const AddStudent = () => {
               {/* <button onClick={clearForm}>Clear form</button> */}
               <button
                 type="submit"
-                className="mt-4 w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className={darkMode ? "mt-4 w-full bg-slate-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" : "mt-4 w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"}
               >
                 Submit
               </button>

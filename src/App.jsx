@@ -12,11 +12,17 @@ import CoursePage from "./pages/CoursePage";
 import AdminManagement from "./pages/AdminManagement";
 import CertificateManagement from "./pages/CertificateManagement";
 import IDCardManagement from "./pages/IDCardManagement";
+import Assignment from "./pages/Assignment";
 import Modal from "./components/Modal";
 import AddStudent from "./pages/AddStudent";
 import AdminHeader from "./components/AdminHeader";
 import StudentLogin from "./pages/StudentLogin";
 import AdminLogin from "./pages/AdminLogin";
+import StudentSubmissions from "./pages/StudentSubmissions";
+import Outline from "./pages/Outline";
+import EditAssignment from "./pages/EditAssignments";
+import PersonalIDCard from "./pages/PersonalIDCard";
+import RoleManagement from "./pages/RoleManagement";
 
 function App() {
   return (
@@ -34,12 +40,18 @@ function App() {
       <Route path="/student-management" element={<StudentManagement />} />
       <Route path="/course-management" element={<CourseManagement />} />
       <Route path="/admin-management" element={<AdminManagement />} />
+      <Route path="/role-management" element={<RoleManagement />} />
       <Route
         path="/certificate-management"
         element={<CertificateManagement />}
       />
       <Route path="/id-card-management" element={<IDCardManagement />} />
+      <Route path="/personal-id-card" element={<PersonalIDCard />} />
       <Route path="/add-student" element={<AddStudent />} />
+      <Route path="/assignment" element={<Assignment />} />
+      <Route path="/student-submissions" element={<StudentSubmissions />} />
+      <Route path="/outline" element={<Outline />} />
+      <Route path="/edit-assignment" element={<EditAssignment />} />
       <Route path="/modal" element={<Modal />} />
       <Route path="/header" element={<AdminHeader />} />
     </Routes>

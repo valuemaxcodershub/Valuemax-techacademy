@@ -8,6 +8,26 @@
   /* display: flex; */
 }
 
+.bg-admin-light {
+  background-image: url("src/assets/images/AdminLightBG.jpg");
+  background-size: auto;
+}
+
+.bg-sidebar-light {
+  background-image: url("src/assets/images/AdminLightSideBarBG-2.jpg");
+  background-size: auto;
+}
+
+.bg-admin-dark {
+  background-image: url("src/assets/images/a-dark-background-image-cut-2.jpg");
+  background-size: auto;
+}
+
+.bg-sidebar-dark {
+  background-image: url("src/assets/images/AdminDarkSideBarBG.jpg");
+  background-size: auto;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
