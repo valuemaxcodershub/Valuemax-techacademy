@@ -5,16 +5,15 @@ import {
   FaGraduationCap,
   FaBars,
   FaIdCard,
+  FaFolderOpen,
 } from "react-icons/fa6";
 import { BiSolidBook, BiSolidDoorOpen } from "react-icons/bi";
 import { GoPerson } from "react-icons/go";
-import { IoIosPeople, IoMdClose, IoMdCreate } from "react-icons/io";
+import { IoIosPeople, IoMdClose } from "react-icons/io";
 import logo from "../assets/valuemax-logo.png";
 import Sidebar from "../components/Sidebar";
 import DashboardLinkButtons from "../components/DashboardLinkButtons";
 import Modal from "../components/Modal";
-// import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import { MdAddCard } from "react-icons/md";
 import AdminDropDownMenu from "../components/AdminDropDownMenu";
 import { Link } from "react-router-dom";
 
@@ -51,10 +50,9 @@ const Admin = () => {
   const studentIcon = <GoPerson size={70} />;
   const courseIcon = <BiSolidBook size={70} />;
   const adminIcon = <IoIosPeople size={70} />;
-  const generateCertificateIcon = <IoMdCreate size={70} />;
   const manageCertificateIcon = <FaGraduationCap size={70} />;
-  const generateIDCardIcon = <MdAddCard size={70} />;
-  const manageIDCardIcon = <FaIdCard size={70} />;
+  const personalIDCardIcon = <FaIdCard size={70} />;
+  const manageIDCardIcon = <FaFolderOpen size={70} />;
 
   const handleLogout = () => {
     // Implement logout logic here
@@ -65,19 +63,15 @@ const Admin = () => {
   // Changes in the admin header should be made again on the header component
 
   return (
-    <div
-      className={
-        darkMode
-          ? "flex flex-row bg-slate-800 roboto-uniquifier min-h-screen"
-          : "flex flex-row bg-blue-700 roboto-uniquifier min-h-screen"
-      }
-    >
-      <div>
+    <div className="flex flex-row min-h-screen poppins-regular">
+      <div
+        className={darkMode ? "bg-sidebar-dark" : "hidden sm:block bg-sidebar-light"}
+      >
         <div
           className={
             darkMode
-              ? "border-r border-b border-slate-500 p-4 hidden sm:block"
-              : "border-r border-b border-blue-600 p-4 hidden sm:block"
+              ? "border-r border-b bg-black border-slate-500 p-4 hidden sm:block"
+              : "border-r border-b border-blue-600 bg-blue-700 p-4 hidden sm:block"
           }
         >
           <Link to="/">
@@ -88,18 +82,20 @@ const Admin = () => {
       </div>
       <main
         className={
-          darkMode ? "flex bg-slate-700 flex-col" : "flex bg-blue-600 flex-col"
+          darkMode ? "flex bg-admin-dark flex-col" : "flex bg-admin-light flex-col"
         }
       >
         <div
           className={
             darkMode
-              ? "bg-slate-800 h-[69px] w-full flex justify-between sm:justify-end"
-              : "bg-blue-700 h-[69px] w-full flex justify-between sm:justify-end"
+              ? "bg-black h-[72px] w-full flex justify-between sm:justify-end"
+              : "bg-blue-700 h-[72px] w-full flex justify-between sm:justify-end"
           }
         >
           <div className={darkMode ? "sm:hidden p-4" : "sm:hidden p-4"}>
-            <Link to="/"><img src={logo} alt="valuemax-logo.png" /></Link>
+            <Link to="/">
+              <img src={logo} alt="valuemax-logo.png" />
+            </Link>
           </div>
           <div className="flex">
             <button
@@ -157,7 +153,7 @@ const Admin = () => {
           />
         )}
         <div className="m-6 flex flex-col items-start">
-          <h2 className="text-4xl mb-4 text-white admin-2">Dashboard</h2>
+          <h2 className={darkMode ? "text-4xl mb-4 text-white admin-2" : "text-4xl mb-4 text-black admin-2"}>Dashboard</h2>
           <div className="flex flex-row flex-wrap">
             <DashboardLinkButtons
               destination="/student-management"
@@ -175,24 +171,19 @@ const Admin = () => {
               title="Admin Management"
             />
             <DashboardLinkButtons
-              destination="/"
-              icon={generateCertificateIcon}
-              title="Generate Certificate"
-            />
-            <DashboardLinkButtons
               destination="/certificate-management"
               icon={manageCertificateIcon}
               title="Manage Certificates"
             />
             <DashboardLinkButtons
               destination="/"
-              icon={generateIDCardIcon}
-              title="Generate ID Card"
+              icon={manageIDCardIcon}
+              title="Manage ID Cards"
             />
             <DashboardLinkButtons
               destination="/certificate-management"
-              icon={manageIDCardIcon}
-              title="Manage ID Cards"
+              icon={personalIDCardIcon}
+              title="Personal ID Card"
             />
           </div>
         </div>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
+import courses from "../courses.json";
 import certificates from "../certificates.json";
-import admins from "../admins.json";
-import students from "../students.json";
+// import admins from "../admins.json";
+// import students from "../students.json";
 import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";
@@ -12,7 +13,8 @@ const CertificateManagement = () => {
     localStorage.getItem("theme") === "darkMode"
   );
   const [filteredData, setFilteredData] = useState(certificates);
-  const [filteredCertificateData, setFilteredCertificateData] = useState(null);
+  const [coursesData, setCoursesData] = useState(courses);
+  // const [filteredCertificateData, setFilteredCertificateData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -37,30 +39,36 @@ const CertificateManagement = () => {
     }
   };
 
-  const handleCertificateSearch = (searchTerm) => {
-    if (!searchTerm) {
-      setFilteredCertificateData(null);
-    } else {
-      searchTerm.toLowerCase();
-      const filteredStudents = students.filter(
-        (item) =>
-          item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.ID.toString().includes(searchTerm.toLowerCase())
-      );
-      // const filteredAdmins = admins.filter(
-      //   (item) =>
-      //     item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      //     item.ID.toString().includes(searchTerm.toLowerCase())
-      // );
+  const handleCertificateGeneration = (event) => {
+    event.target.preventDefault();
+    // certificate generation logic
+    closeModal();
+  }
 
-      // const filtered = [...filteredStudents, ...filteredAdmins];
-      // Filter out items already in IDCards
-      // const finalFiltered = filtered.filter(
-      //   (item) => !certificates.some((certificate) => certificate.ID === item.ID)
-      // );
-      setFilteredCertificateData(filteredStudents);
-    }
-  };
+  // const handleCertificateSearch = (searchTerm) => {
+  //   if (!searchTerm) {
+  //     setFilteredCertificateData(null);
+  //   } else {
+  //     searchTerm.toLowerCase();
+  //     const filteredStudents = students.filter(
+  //       (item) =>
+  //         item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //         item.ID.toString().includes(searchTerm.toLowerCase())
+  //     );
+  //     // const filteredAdmins = admins.filter(
+  //     //   (item) =>
+  //     //     item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     //     item.ID.toString().includes(searchTerm.toLowerCase())
+  //     // );
+
+  //     // const filtered = [...filteredStudents, ...filteredAdmins];
+  //     // Filter out items already in IDCards
+  //     // const finalFiltered = filtered.filter(
+  //     //   (item) => !certificates.some((certificate) => certificate.ID === item.ID)
+  //     // );
+  //     setFilteredCertificateData(filteredStudents);
+  //   }
+  // };
 
   useEffect(() => {
     if (darkMode) {
@@ -88,7 +96,7 @@ const CertificateManagement = () => {
           <main
             className={
               darkMode
-                ? "bg-slate-700 text-white grow p-4 lg:p-6"
+                ? "bg-admin-dark text-white grow p-4 lg:p-6"
                 : "bg-blue-600 text-white grow p-4 lg:p-6"
             }
           >
@@ -105,45 +113,16 @@ const CertificateManagement = () => {
               onClose={closeModal}
               title="Generate New Certificate"
             >
-              <SearchBar onSearch={handleCertificateSearch} />
-              <table className="w-full mt-4 text-white">
-                <thead>
-                  <tr className={darkMode ? "bg-slate-950" : "bg-blue-900"}>
-                    <th className="p-2 text-left">Name</th>
-                    <th className="p-2 text-left">ID</th>
-                    <th className="p-2 text-left"></th>
-                  </tr>
-                </thead>
-                <tbody className="text-white">
-                  {filteredCertificateData?.map((item, index) => (
-                    <tr
-                      key={index}
-                      className={
-                        index % 2 === 0
-                          ? darkMode
-                            ? "bg-gray-800"
-                            : "bg-blue-700"
-                          : darkMode
-                          ? "bg-gray-900"
-                          : "bg-blue-800"
-                      }
-                    >
-                      <td className="p-2 text-left">{item.Name}</td>
-                      <td className="p-2 text-left">{item.ID}</td>
-                      <td className="p-2 text-left">
-                        <button
-                          className="py-1 px-3 bg-white rounded-md text-black"
-                          onClick={() => {
-                            console.log(item);
-                          }}
-                        >
-                          Generate
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <form onSubmit={handleCertificateGeneration}>
+              <select name="certificate" id="certificate-select" className="w-full">
+                {coursesData.map((item, index) => (
+                  <option value={item.Name}>{item.Name}</option>
+                ))}
+              </select>
+              <div className="flex justify-end mt-4">
+                <button type="submit" className="bg-blue-500 p-2 rounded-xl text-white mt-4 hover:bg-blue-600">Generate</button>
+              </div>
+              </form>
             </Modal>
             <SearchBar onSearch={handleSearch} />
             <table className="w-full mt-4">

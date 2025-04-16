@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "Admin",
+    "ID": 1,
+    "Status": "Active",
+    "JobDescription":""
+  },
+  {
+    "Name": "Super Admin",
+    "ID": 2,
+    "Status": "Active",
+    "JobDescription":""
+  },
+  {
+    "Name": "Secretary",
+    "ID": 3,
+    "Status": "Active",
+    "JobDescription":""
+  }
+]

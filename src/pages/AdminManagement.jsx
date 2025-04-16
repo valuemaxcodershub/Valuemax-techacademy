@@ -88,7 +88,7 @@ const AdminManagement = () => {
           <main
             className={
               darkMode
-                ? "bg-slate-700 text-white grow p-4 lg:p-6"
+                ? "bg-admin-dark text-white grow p-4 lg:p-6"
                 : "bg-blue-600 text-white grow p-4 lg:p-6"
             }
           >
@@ -176,7 +176,7 @@ const AdminManagement = () => {
                   </button>
                   <button
                     type="submit"
-                    className="bg-blue-500 text-white p-2 rounded-md"
+                    className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
                   >
                     Submit
                   </button>
