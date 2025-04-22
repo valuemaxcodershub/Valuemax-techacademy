@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import courses from "../courses.json";
-import admins from "../admins.json";
+// import admins from "../admins.json";
 import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";

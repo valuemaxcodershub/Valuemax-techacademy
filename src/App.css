@@ -10,7 +10,7 @@
 
 .bg-admin-light {
   background-image: url("src/assets/images/AdminLightBG.jpg");
-  background-size: auto;
+  background-size: cover;
 }
 
 .bg-sidebar-light {

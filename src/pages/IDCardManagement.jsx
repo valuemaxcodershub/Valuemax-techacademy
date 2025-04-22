@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import students from "../students.json";
-import admins from "../admins.json";
 import IDCards from "../IDCard.json";
 import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
@@ -12,7 +10,7 @@ const IDCardManagement = () => {
     localStorage.getItem("theme") === "darkMode"
   );
   const [filteredData, setFilteredData] = useState(IDCards);
-  const [filteredIDData, setFilteredIDData] = useState(null);
+  // const [filteredIDData, setFilteredIDData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -42,30 +40,30 @@ const IDCardManagement = () => {
     closeModal();
   }
 
-  const handleIDSearch = (searchTerm) => {
-    if (!searchTerm) {
-      setFilteredIDData(null);
-    } else {
-      searchTerm.toLowerCase();
-      const filteredStudents = students.filter(
-        (item) =>
-          item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.ID.toString().includes(searchTerm.toLowerCase())
-      );
-      const filteredAdmins = admins.filter(
-        (item) =>
-          item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.ID.toString().includes(searchTerm.toLowerCase())
-      );
+  // const handleIDSearch = (searchTerm) => {
+  //   if (!searchTerm) {
+  //     setFilteredIDData(null);
+  //   } else {
+  //     searchTerm.toLowerCase();
+  //     const filteredStudents = students.filter(
+  //       (item) =>
+  //         item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //         item.ID.toString().includes(searchTerm.toLowerCase())
+  //     );
+  //     const filteredAdmins = admins.filter(
+  //       (item) =>
+  //         item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //         item.ID.toString().includes(searchTerm.toLowerCase())
+  //     );
 
-      const filtered = [...filteredStudents, ...filteredAdmins];
-      // Filter out items already in IDCards
-      const finalFiltered = filtered.filter(
-        (item) => !IDCards.some((idCard) => idCard.ID === item.ID)
-      );
-      setFilteredIDData(finalFiltered);
-    }
-  };
+  //     const filtered = [...filteredStudents, ...filteredAdmins];
+  //     // Filter out items already in IDCards
+  //     const finalFiltered = filtered.filter(
+  //       (item) => !IDCards.some((idCard) => idCard.ID === item.ID)
+  //     );
+  //     setFilteredIDData(finalFiltered);
+  //   }
+  // };
 
   useEffect(() => {
     if (darkMode) {
