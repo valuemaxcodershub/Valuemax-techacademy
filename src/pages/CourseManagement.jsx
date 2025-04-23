@@ -161,10 +161,10 @@ const CourseManagement = () => {
             <table className="w-full mt-4">
               <thead>
                 <tr className={darkMode ? "bg-black" : "bg-slate-900"}>
-                  <th className="p-2 text-left">Name</th>
+                  <th className="p-2 text-left w-[200px] lg:w-auto">Name</th>
                   <th className="p-2 text-left">Teacher</th>
-                  <th className="p-2 text-left">Duration</th>
-                  <th className="p-2 text-left">Price(&#8358;)</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Duration</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Price(&#8358;)</th>
                 </tr>
               </thead>
               <tbody>
@@ -181,10 +181,10 @@ const CourseManagement = () => {
                         : "bg-slate-500"
                     }
                   >
-                    <td className="p-2 text-left">{item.Name}</td>
+                    <td className="p-2 text-left w-[200px] lg:w-auto">{item.Name}</td>
                     <td className="p-2 text-left">{item.Teacher}</td>
-                    <td className="p-2 text-left">{item.Duration}</td>
-                    <td className="p-2 text-left">{item.Price}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{item.Duration}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{item.Price}</td>
                   </tr>
                 ))}
               </tbody>

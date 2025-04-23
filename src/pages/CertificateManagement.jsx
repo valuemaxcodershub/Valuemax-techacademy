@@ -129,7 +129,7 @@ const CertificateManagement = () => {
               <thead>
                 <tr className={darkMode ? "bg-black" : "bg-slate-900"}>
                   <th className="p-2 text-left">Name</th>
-                  <th className="p-2 text-left">ID</th>
+                  <th className="p-2 text-left hidden lg:table-cell">ID</th>
                   <th className="p-2 text-left">Course</th>
                   <th className="p-2 text-left">Download</th>
                 </tr>
@@ -149,7 +149,7 @@ const CertificateManagement = () => {
                     }
                   >
                     <td className="p-2 text-left">{item.Name}</td>
-                    <td className="p-2 text-left">{item.ID}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{item.ID}</td>
                     <td className="p-2 text-left">{item.Course}</td>
                     <td className="p-2 text-left">
                       <a href={item.CertificateDownloadLink} target="_blank">

@@ -77,14 +77,14 @@ const StudentManagement = () => {
             <table className="w-full mt-4">
               <thead>
                 <tr className={darkMode ? "bg-black" : "bg-slate-900"}>
-                  <th className="p-2 text-left">S/N</th>
+                  <th className="p-2 text-left hidden lg:table-cell">S/N</th>
                   <th className="p-2 text-left">Name</th>
                   <th className="p-2 text-left">ID</th>
-                  <th className="p-2 text-left hidden lg:block">Age</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Age</th>
                   <th className="p-2 text-left">Course</th>
-                  <th className="p-2 text-left hidden lg:block">Start Date</th>
-                  <th className="p-2 text-left">Status</th>
-                  <th className="p-2 text-left">Payment</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Start Date</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Status</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Payment</th>
                 </tr>
               </thead>
               <tbody>
@@ -101,18 +101,18 @@ const StudentManagement = () => {
                         : "bg-slate-500"
                     }
                   >
-                    <td className="p-2 text-left">{index + 1}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{index + 1}</td>
                     <td className="p-2 text-left">{item.Name}</td>
                     <td className="p-2 text-left">{item.ID}</td>
-                    <td className="p-2 text-left hidden lg:block">
+                    <td className="p-2 text-left hidden lg:table-cell">
                       {item.Age}
                     </td>
                     <td className="p-2 text-left">{item.Course}</td>
-                    <td className="p-2 text-left hidden lg:block">
+                    <td className="p-2 text-left hidden lg:table-cell">
                       {item.StartDate}
                     </td>
-                    <td className="p-2 text-left">{item.Status}</td>
-                    <td className="p-2 text-left">{item.Payment}</td>
+                    <td className="p-2 text-lef hidden lg:table-cell">{item.Status}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{item.Payment}</td>
                   </tr>
                 ))}
               </tbody>
