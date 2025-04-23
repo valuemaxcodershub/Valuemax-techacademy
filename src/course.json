@@ -21,7 +21,6 @@
          "description": "Mobile development is about creating applications and other software for mobile devices, including tablets and smartphones. At Valuemax, we focus on a hybrid approach to mobile app development, using languages that work cross platform on both Andriod and IOS devices, as well as been able to host your app on Google Play Store and Apple App Store .Please note that a good knowledge of front-end web app development is necessary before delving into mobile app development.To accomplish this, students will pick any of the following language of developoment:REACT NATIVE: Creating components, handling state, and using the built-in UI components, Navigation, styling and emulator.IONIC FRAMEWORK: Navigation, styling, Adding native functionality.FLUTTER: dart syntax, layout, widget, and state management" 
       },
       {
-         
          "id": "5",
          "title": "BASIC PYTHON PROGRAMMING",
          "description": "At this stage,you will learn all the syntax of python programming, including variables and conditionals, looping and iteration, functions and classes,lambda and importing modules in python.This will give you a strong foundation in the world of python for data science, artificial intelligence, and machine learning, back-end for web app programming, desktop application, and device programming"

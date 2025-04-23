@@ -41,11 +41,11 @@ const Footer = () => {
           <div className='item'>
             <h1>About Us </h1>
             <ul>
-              <li><Link to="/courses">About Us</Link></li>
-              <li><Link to="/courses">Hosting & Domain</Link></li>
-              <li><Link to="/courses">Buy Data</Link></li>  
-              <li><Link to="/courses">News</Link></li>
-              <li><Link to="/courses">Contact Us</Link></li>
+              <li><Link to="/">About Us</Link></li>
+              <li><Link to="/">Hosting & Domain</Link></li>
+              <li><Link to="/">Buy Data</Link></li>  
+              <li><Link to="/">News</Link></li>
+              <li><Link to="/">Contact Us</Link></li>
             </ul>
           </div>
         </div>
@@ -56,18 +56,19 @@ const Footer = () => {
           <div className='item'>
             <h1>Programming</h1>
             <ul>
-              <li><Link to="/courses">Front-End Web Dev</Link></li>
-              <li><Link to="/courses">Back-End Web Dev</Link></li>
-              <li><Link to="/courses">Python Programming</Link></li>
-              <li><Link to="/courses">Data Science & Machine Learning (M.L)</Link></li>
-              <li><Link to="/courses">Data Analysis</Link></li>
-              <li><Link to="/courses">Mobile App Dev</Link></li>
+              <li><Link to="/courses/1">Front-End Web Dev</Link></li>
+              <li><Link to="/courses/2">Front-End Web - JS</Link></li>
+              <li><Link to="/courses/3">Back-End Web Dev</Link></li>
+              <li><Link to="/courses/5">Python Programming</Link></li>
+              <li><Link to="/courses/6">Data Science & Machine Learning (M.L)</Link></li>
+              <li><Link to="/courses/11">Data Analysis</Link></li>
+              <li><Link to="/courses/4">Mobile App Dev</Link></li>
               <li><Link to="/courses">Desktop Application</Link></li>
               <li><Link to="/courses">Computer Networking</Link></li>
-              <li><Link to="/courses">DevOps/Cloud Computing</Link></li>
+              <li><Link to="/courses/8">DevOps/Cloud Computing</Link></li>
               <li><Link to="/courses">Cyber Security</Link></li>
               <li><Link to="/courses">Web 3: Blockchain Dev</Link></li>
-              <li><Link to="/courses">Artificial Intelligence (A.I), Robotic, <br /> Automation, IOT & Embedded system</Link></li>
+              <li><Link to="/courses/7">Artificial Intelligence (A.I), Robotic, <br /> Automation, IOT & Embedded system</Link></li>
             </ul>
           </div>
         </div>
@@ -78,15 +79,15 @@ const Footer = () => {
           <div className='item'>
             <h1>Non-Programming</h1>
             <ul>
-              <li><Link to="/courses">Foundation Computer Training</Link></li>
-              <li><Link to="/courses">Professional Graphics and 3D Designs</Link></li>
+              <li><Link to="/courses/18">Foundation Computer Training</Link></li>
+              <li><Link to="/courses/12">Professional Graphics and 3D Designs</Link></li>
               <li><Link to="/courses">Video Editing/ Motion Graphics, 3D Animation, and White Boarding</Link></li>
-              <li><Link to="/courses">UI/UX</Link></li>
+              <li><Link to="/courses/9">UI/UX</Link></li>
               <li><Link to="/courses">Auto card for Architectural Design</Link></li>
               <li><Link to="/courses">Sage & other Accounting Software</Link></li>
               <li><Link to="/courses">Artificial Intelligence apps/tools usage</Link></li>
-              <li><Link to="/courses">CMS Based Web Design</Link></li>
-              <li><Link to="/courses">Digital Marketing </Link></li>
+              <li><Link to="/courses/10">CMS Based Web Design</Link></li>
+              <li><Link to="/courses/13">Digital Marketing </Link></li>
             </ul>
           </div>
         </div>
