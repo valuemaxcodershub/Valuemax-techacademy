@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
 
-const Testimony = ({testimony, images, index }) => {
+const Testimony = ({testimony, index }) => {
    const [showFullTestimony, setShowFullTestimony] = useState(false)
    let fullTestimony = testimony.testimony
 
@@ -26,7 +26,7 @@ const Testimony = ({testimony, images, index }) => {
          </p>
          <div>
             <div class="test-img">
-               <img src={images[index]} alt=""/>
+               <img src={testimony.image} alt=""/>
             </div>
             <h3>{testimony.testifier}</h3>
          </div>

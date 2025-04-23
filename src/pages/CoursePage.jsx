@@ -44,8 +44,6 @@ const CoursePage = () => {
   //  console.log(id);
 
    const [course, setCourse] = useState(null)
-   
-   
    // console.log(course);
 
   return (

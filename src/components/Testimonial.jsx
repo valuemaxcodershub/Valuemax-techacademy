@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import "../assets/css/style.css"
 import "../assets/css/smallScreen.css"
-import pre from "../assets/images/pre.jpg"
-import olayinka from "../assets/images/olayinka.jpg"
-import ban from "../assets/images/ban.jpg"
+// import pre from "../assets/images/pre.jpg"
+// import ban from "../assets/images/ban.jpg"
+// import olayinka from "../assets/images/olayinka.jpg"
+// import dom from "../assets/images/dom.jpg"
+// import malik from "../assets/images/malik.jpg"
+// import esther from "../assets/images/esther.jpg"
 import testimonies from '../testimonies.json'
 import Testimony from './Testimony'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 
 const Testimonial = () => {
-   const testiImages = [pre, ban, olayinka]
+   // const testiImages = [pre, ban, olayinka, dom, malik, esther]
    const testimonyListing = testimonies
 
   const [current, setCurrent] = useState(0);
@@ -18,24 +21,32 @@ const Testimonial = () => {
 
    useEffect(() => {
       const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 768) setCardsToShow(1);
-      else setCardsToShow(3);                      
+         const width = window.innerWidth;
+         if (width < 768){
+            setCardsToShow(1)
+            // console.log(testiImages.length);
+         }
+         else {
+            setCardsToShow(3)
+         };                      
       };
       handleResize(); 
       window.addEventListener('resize', handleResize); 
       return () => window.removeEventListener('resize', handleResize);
    }, []);
 
+   const totalSlides = testimonyListing.length;
+   const cardWidthPercent = 100 / cardsToShow;
+
    const prevSlide = () => {
       setCurrent((prev) =>
-      prev === 0 ? testimonyListing.length - cardsToShow : prev - 1
+      prev === 0 ? totalSlides - cardsToShow : prev - 1
       );
    };
 
    const nextSlide = () => {
       setCurrent((prev) =>
-      prev + cardsToShow >= testimonyListing.length ? 0 : prev + 1
+      prev + cardsToShow >= totalSlides ? 0 : prev + 1
       );
    };
 
@@ -52,9 +63,9 @@ const Testimonial = () => {
       </p>
       <div className='carousel'>
          <button onClick={prevSlide}><FaArrowLeft className='ca-icon' size={'30'}/></button>
-         <div class="test-box">
+         <div class="test-box" >
             {visibleTestimonials.map((testimony, index) => (
-               <Testimony testimony={testimony} images={testiImages} key={testimony.id} index={index}/>
+               <Testimony testimony={testimony} key={testimony.id} index={index}/>
             ))}
          </div>
          <button onClick={nextSlide}> <FaArrowRight className='ca-icon' size={'30'}/> </button>
