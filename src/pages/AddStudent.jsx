@@ -108,8 +108,8 @@ const AddStudent = () => {
           <main
             className={
               darkMode
-                ? "bg-admin-dark text-white grow p-4 lg:p-6 flex justify-center items-center"
-                : "bg-admin-light text-white grow p-4 lg:p-6 flex justify-center items-center"
+                ? "bg-admin-dark text-white grow p-2 lg:p-6 flex justify-center items-center"
+                : "bg-admin-light text-white grow p-2 lg:p-6 flex justify-center items-center"
             }
           >
             <form
