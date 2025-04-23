@@ -142,10 +142,10 @@ const CertificateManagement = () => {
                       index % 2 === 0
                         ? darkMode
                           ? "bg-gray-800"
-                          : "bg-slate-400"
+                          : "bg-slate-500"
                         : darkMode
                         ? "bg-gray-900"
-                        : "bg-slate-500"
+                        : "bg-slate-600"
                     }
                   >
                     <td className="p-2 text-left">{item.Name}</td>

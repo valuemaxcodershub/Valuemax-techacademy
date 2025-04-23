@@ -56,7 +56,7 @@ const AdminHeader = (props) => {
         className={
           props.darkMode
             ? "border-r border-b border-slate-500 p-4 bg-black min-w-[290px] md:w-[290px] hidden sm:block"
-            : "border-r border-b border-slate-500 p-4  min-w-[290px] md:w-[290px] hidden sm:block"
+            : "border-r border-b border-slate-500 p-4 bg-sidebar-light  min-w-[290px] md:w-[290px] hidden sm:block"
         }
       >
         <Link to="/">
