@@ -10,8 +10,8 @@ const PersonalIDCard = () => {
     <div
       className={
         darkMode
-          ? "bg-slate-800 flex flex-col grow"
-          : "bg-blue-700 flex flex-col grow"
+          ? "flex flex-col grow"
+          : "flex flex-col grow"
       }
     >
       <AdminHeader setDarkMode={setDarkMode} darkMode={darkMode} />
@@ -22,7 +22,7 @@ const PersonalIDCard = () => {
             className={
               darkMode
                 ? "bg-admin-dark text-white grow p-4 lg:p-6"
-                : "bg-blue-600 text-white grow p-4 lg:p-6"
+                : "bg-admin-light text-white grow p-4 lg:p-6"
             }
           >
             <h1>Personal ID Card</h1>

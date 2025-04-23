@@ -8,7 +8,7 @@ const AdminDropDownMenu = (props) => {
       className={
         props.darkMode
           ? "sm:hidden bg-gray-950 p-4"
-          : "sm:hidden bg-blue-800 p-4"
+          : "sm:hidden bg-slate-600 p-4"
       }
     >
       <Link
@@ -50,14 +50,14 @@ const AdminDropDownMenu = (props) => {
         Generate ID Card
       </Link> */}
       <Link
-        to="/certificate-management"
+        to="/id-card-management"
         className={menuLinkCss}
         onClick={props.toggleMobileMenu}
       >
         Manage ID Cards
       </Link>
       <Link
-        to="/id-card"
+        to="/personal-id-card"
         className={menuLinkCss}
         onClick={props.toggleMobileMenu}
       >
@@ -78,11 +78,11 @@ const AdminDropDownMenu = (props) => {
         Edit Assignment
       </Link>
       <Link
-        to="/view-assignment-answers"
+        to="/student-submissions"
         className={menuLinkCss}
         onClick={props.toggleMobileMenu}
       >
-        View Student Submission
+        Student Submissions
       </Link>
       <Link
         to="/outline"

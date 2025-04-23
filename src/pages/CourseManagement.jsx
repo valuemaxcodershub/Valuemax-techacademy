@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import courses from "../courses.json";
-import admins from "../admins.json";
+// import admins from "../admins.json";
 import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";
@@ -71,8 +71,8 @@ const CourseManagement = () => {
     <div
       className={
         darkMode
-          ? "bg-slate-800 flex flex-col grow"
-          : "bg-blue-700 flex flex-col grow"
+          ? "flex flex-col grow"
+          : "flex flex-col grow"
       }
     >
       <AdminHeader setDarkMode={setDarkMode} darkMode={darkMode} />
@@ -83,7 +83,7 @@ const CourseManagement = () => {
             className={
               darkMode
                 ? "bg-admin-dark text-white grow p-4 lg:p-6"
-                : "bg-blue-600 text-white grow p-4 lg:p-6"
+                : "bg-admin-light text-white grow p-4 lg:p-6"
             }
           >
             <div className="grid justify-items-end">
@@ -157,14 +157,14 @@ const CourseManagement = () => {
                 </div>
               </form>
             </Modal>
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar onSearch={handleSearch} mode={darkMode}/>
             <table className="w-full mt-4">
               <thead>
-                <tr className={darkMode ? "bg-black" : "bg-blue-900"}>
-                  <th className="p-2 text-left">Name</th>
+                <tr className={darkMode ? "bg-black" : "bg-slate-900"}>
+                  <th className="p-2 text-left w-[200px] lg:w-auto">Name</th>
                   <th className="p-2 text-left">Teacher</th>
-                  <th className="p-2 text-left">Duration</th>
-                  <th className="p-2 text-left">Price(&#8358;)</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Duration</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Price(&#8358;)</th>
                 </tr>
               </thead>
               <tbody>
@@ -175,16 +175,16 @@ const CourseManagement = () => {
                       index % 2 === 0
                         ? darkMode
                           ? "bg-gray-800"
-                          : "bg-blue-700"
+                          : "bg-slate-400"
                         : darkMode
                         ? "bg-gray-900"
-                        : "bg-blue-800"
+                        : "bg-slate-500"
                     }
                   >
-                    <td className="p-2 text-left">{item.Name}</td>
+                    <td className="p-2 text-left w-[200px] lg:w-auto">{item.Name}</td>
                     <td className="p-2 text-left">{item.Teacher}</td>
-                    <td className="p-2 text-left">{item.Duration}</td>
-                    <td className="p-2 text-left">{item.Price}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{item.Duration}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{item.Price}</td>
                   </tr>
                 ))}
               </tbody>

@@ -50,8 +50,8 @@ const StudentManagement = () => {
     <div
       className={
         darkMode
-          ? "bg-admin-dark flex flex-col grow"
-          : "bg-blue-700 flex flex-col grow"
+          ? "flex flex-col grow"
+          : "flex flex-col grow"
       }
     >
       <AdminHeader setDarkMode={setDarkMode} darkMode={darkMode} />
@@ -62,7 +62,7 @@ const StudentManagement = () => {
             className={
               darkMode
                 ? "bg-admin-dark text-white grow p-4 lg:p-6"
-                : "bg-blue-600 text-white grow p-4 lg:p-6"
+                : "bg-admin-light text-white grow p-4 lg:p-6"
             }
           >
             <div className="grid justify-items-end">
@@ -73,18 +73,18 @@ const StudentManagement = () => {
                 Add new Student
               </button>
             </div>
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar onSearch={handleSearch} mode={darkMode} />
             <table className="w-full mt-4">
               <thead>
-                <tr className={darkMode ? "bg-black" : "bg-blue-900"}>
-                  <th className="p-2 text-left">S/N</th>
+                <tr className={darkMode ? "bg-black" : "bg-slate-900"}>
+                  <th className="p-2 text-left hidden lg:table-cell">S/N</th>
                   <th className="p-2 text-left">Name</th>
                   <th className="p-2 text-left">ID</th>
-                  <th className="p-2 text-left hidden lg:block">Age</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Age</th>
                   <th className="p-2 text-left">Course</th>
-                  <th className="p-2 text-left hidden lg:block">Start Date</th>
-                  <th className="p-2 text-left">Status</th>
-                  <th className="p-2 text-left">Payment</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Start Date</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Status</th>
+                  <th className="p-2 text-left hidden lg:table-cell">Payment</th>
                 </tr>
               </thead>
               <tbody>
@@ -95,24 +95,24 @@ const StudentManagement = () => {
                       index % 2 === 0
                         ? darkMode
                           ? "bg-gray-800"
-                          : "bg-blue-700"
+                          : "bg-slate-400"
                         : darkMode
                         ? "bg-gray-900"
-                        : "bg-blue-800"
+                        : "bg-slate-500"
                     }
                   >
-                    <td className="p-2 text-left">{index + 1}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{index + 1}</td>
                     <td className="p-2 text-left">{item.Name}</td>
                     <td className="p-2 text-left">{item.ID}</td>
-                    <td className="p-2 text-left hidden lg:block">
+                    <td className="p-2 text-left hidden lg:table-cell">
                       {item.Age}
                     </td>
                     <td className="p-2 text-left">{item.Course}</td>
-                    <td className="p-2 text-left hidden lg:block">
+                    <td className="p-2 text-left hidden lg:table-cell">
                       {item.StartDate}
                     </td>
-                    <td className="p-2 text-left">{item.Status}</td>
-                    <td className="p-2 text-left">{item.Payment}</td>
+                    <td className="p-2 text-lef hidden lg:table-cell">{item.Status}</td>
+                    <td className="p-2 text-left hidden lg:table-cell">{item.Payment}</td>
                   </tr>
                 ))}
               </tbody>
