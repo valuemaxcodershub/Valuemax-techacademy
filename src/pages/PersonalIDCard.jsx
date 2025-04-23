@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AdminHeader from "../components/AdminHeader";
 import Sidebar from "../components/Sidebar";
 
@@ -6,6 +6,17 @@ const PersonalIDCard = () => {
   const [darkMode, setDarkMode] = useState(
       localStorage.getItem("theme") === "darkMode"
     );
+      useEffect(() => {
+        if (darkMode) {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("theme", "darkMode");
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        }
+        console.log("It works");
+      }, [darkMode]);
+
   return (
     <div
       className={

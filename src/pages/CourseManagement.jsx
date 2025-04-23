@@ -175,10 +175,10 @@ const CourseManagement = () => {
                       index % 2 === 0
                         ? darkMode
                           ? "bg-gray-800"
-                          : "bg-slate-400"
+                          : "bg-slate-500"
                         : darkMode
                         ? "bg-gray-900"
-                        : "bg-slate-500"
+                        : "bg-slate-600"
                     }
                   >
                     <td className="p-2 text-left w-[200px] lg:w-auto">{item.Name}</td>

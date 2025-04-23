@@ -9,22 +9,22 @@
 }
 
 .bg-admin-light {
-  background-image: url(src/assets/images/adminLightBG.jpg);
+  background-image: url(./assets/images/adminLightBG.jpg);
   background-size: cover;
 }
 
 .bg-sidebar-light {
-  background-image: url(src/assets/images/adminLightSideBarBG-2.jpg);
+  background-image: url(./assets/images/adminLightSideBarBG-2.jpg);
   background-size: auto;
 }
 
 .bg-admin-dark {
-  background-image: url(src/assets/images/a-dark-background-image-cut-2.jpg);
+  background-image: url(./assets/images/a-dark-background-image-cut-2.jpg);
   background-size: auto;
 }
 
 .bg-sidebar-dark {
-  background-image: url(src/assets/images/adminDarkSideBarBG.jpg);
+  background-image: url(./assets/images/adminDarkSideBarBG.jpg);
   background-size: auto;
 }
 
