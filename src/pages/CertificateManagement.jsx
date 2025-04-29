@@ -8,6 +8,39 @@ import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";
 
+
+/**
+ * CertificateManagement Component
+ * 
+ * Description:
+ * - Admin interface for managing course completion certificates.
+ * - Displays a list of certificates with search and download functionality.
+ * - Allows admin to generate new certificates for courses via a modal form.
+ * 
+ * State Variables:
+ * - darkMode: Tracks current theme preference (light/dark).
+ * - filteredData: Currently displayed certificates after search filtering.
+ * - coursesData: List of courses used in certificate generation.
+ * - isModalOpen: Controls visibility of the certificate generation modal.
+ * 
+ * Features:
+ * - Dark mode support based on localStorage 'theme'
+ * - Search functionality to filter displayed certificates
+ * - Certificate generation modal with course selection dropdown
+ * - Table view showing name, ID, course, and download button
+ * 
+ * Dependencies:
+ * - Sidebar, AdminHeader: Layout/navigation components
+ * - Modal: Reusable modal dialog component
+ * - SearchBar: Search input component
+ * - courses.json & certificates.json: Static data sources
+ * 
+ * Future Enhancements:
+ * - Add user selection (e.g., from student/admin pool) before certificate generation
+ * - Connect to backend API for persistent storage and generation
+ */
+
+
 const CertificateManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"

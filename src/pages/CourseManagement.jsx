@@ -6,6 +6,42 @@ import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";
 
+
+/**
+ * CourseManagement Component
+ *
+ * Description:
+ * - Admin panel for managing available courses in the platform.
+ * - Displays a searchable list of courses and supports adding new ones via a modal form.
+ *
+ * State Variables:
+ * - darkMode: Toggles between dark and light themes based on localStorage.
+ * - filteredData: List of courses filtered through the search bar.
+ * - isModalOpen: Controls visibility of the "Add New Course" modal.
+ * - name, courseCode, duration, price: Controlled inputs for the course creation form.
+ *
+ * Features:
+ * - Dark mode support with persistent theme preference.
+ * - Search functionality across Name, Teacher, Duration, and Price.
+ * - Modal form to add new courses with basic validation and clearing mechanism.
+ *
+ * Known Issues:
+ * - `teacher` is referenced in `handleSubmit` and `clearForm`, but state is not declared.
+ *   ➤ Fix: Add `const [teacher, setTeacher] = useState("");`
+ *
+ * Dependencies:
+ * - Sidebar, AdminHeader: Layout/navigation components
+ * - Modal: Reusable modal component for form display
+ * - SearchBar: Search input component
+ * - courses.json: Mock/static data source for courses
+ *
+ * TODO/Future Enhancements:
+ * - Connect course form to a backend service or persist changes locally
+ * - Show course code in table or use it for unique key generation
+ * - Add edit and delete options for existing courses
+ */
+
+
 const CourseManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"
