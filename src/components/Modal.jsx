@@ -1,6 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+/**
+ * Modal Component
+ * 
+ * A reusable modal component rendered using React Portal to overlay on top of the application UI.
+ * It blocks interaction with the background and is useful for confirmations, forms, or alerts.
+ * 
+ * Props:
+ * - isOpen (boolean): Controls the visibility of the modal.
+ * - onClose (function): Callback to close the modal when triggered (e.g., clicking the close button).
+ * - children (JSX.Element | string): The modal's content body.
+ * - title (string): The title displayed at the top of the modal.
+ * 
+ * Features:
+ * - Renders into a separate DOM node with ID 'modal-root' to avoid layout disruption.
+ * - Includes dark mode support.
+ * - Automatically centers modal content and darkens background.
+ * 
+ * Note:
+ * Make sure to include a `<div id="modal-root"></div>` in your `public/index.html` file.
+ */
+
+
 const Modal = ({ isOpen, onClose, children, title }) => {
   if (!isOpen) return null;
 
