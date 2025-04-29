@@ -15,6 +15,43 @@ import darkMode from "./Header";
 import { MdAssignment } from "react-icons/md";
 import Modal from "./Modal";
 
+
+/**
+ * Sidebar Component
+ * ------------------
+ * A vertical navigation sidebar designed for an Admin Dashboard.
+ * Supports collapsible sections, dark/light theming, and logout functionality.
+ *
+ * Props:
+ * - mode (boolean): Enables dark mode if true.
+ *
+ * State:
+ * - isStudentManagementOpen: Toggles visibility of Student Management links.
+ * - isAdminManagementOpen: Toggles visibility of Admin Management links.
+ * - isIDCardManagementOpen: Toggles visibility of ID Card Management links.
+ * - isAssignmentOpen: Toggles visibility of Assignment/Resource links.
+ * - isModalOpen: Toggles the visibility of the logout confirmation modal.
+ *
+ * Features:
+ * - Theme Switching: Adds or removes `dark` class on the root element.
+ * - Nested Navigation: Sections for Student/Admin/ID Card/Resource management.
+ * - Logout Modal: Confirms before logging out and redirects to home.
+ *
+ * Dependencies:
+ * - react-router-dom (NavLink, useNavigate)
+ * - react-icons (Fa and Md icon sets)
+ * - Modal component (custom)
+ *
+ * Usage:
+ * <Sidebar mode={true} /> // Enables dark mode
+ *
+ * Notes:
+ * - Ensure a <div id="modal-root"></div> exists in your index.html for portal rendering.
+ * - All `to` paths in NavLinks should be properly routed in your React Router config.
+ * - For enhanced accessibility, consider adding aria-labels and keyboard support.
+ */
+
+
 const Sidebar = (props) => {
   const [isStudentManagementOpen, setIsStudentManagementOpen] = useState(false);
   const [isAdminManagementOpen, setIsAdminManagementOpen] = useState(false);

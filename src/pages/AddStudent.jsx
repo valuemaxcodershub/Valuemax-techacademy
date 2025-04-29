@@ -2,6 +2,45 @@ import React, { useEffect, useState } from "react";
 import AdminHeader from "../components/AdminHeader";
 import Sidebar from "../components/Sidebar";
 
+/**
+ * AddStudent Component
+ * 
+ * This component provides a form interface for registering new students.
+ * It includes form validation, dark mode support, and uses AdminHeader and Sidebar components.
+ * 
+ * Features:
+ * - Responsive student registration form
+ * - Field validation (name, course, number, email, date of birth)
+ * - Dark mode support via `localStorage`
+ * - Error messages for invalid/missing inputs
+ * - Form reset after successful submission
+ * 
+ * State Variables:
+ * - darkMode: boolean — tracks dark/light theme
+ * - name, course, number, email, dateOfBirth, payment: strings — input fields
+ * - errors: object — stores validation messages
+ * 
+ * useEffect:
+ * - Applies or removes the "dark" class on the document root based on darkMode
+ * - Saves current theme to localStorage
+ * 
+ * Functions:
+ * - clearForm(): Clears all form fields
+ * - validateForm(): Validates fields and updates error state
+ * - handleSubmit(): Prevents default submission, validates, logs result
+ * 
+ * Layout:
+ * - AdminHeader at top
+ * - Sidebar on left
+ * - Centered form for input with responsive design
+ * 
+ * Notes:
+ * - Payment is handled as a string; could be improved by using boolean
+ * - Form does not currently submit to a backend or API
+ * - Consider replacing duplicated `useEffect` with a single instance
+ */
+
+
 const AddStudent = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"

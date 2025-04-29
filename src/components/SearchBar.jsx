@@ -1,5 +1,23 @@
 import React, { useState } from 'react';
 
+
+/**
+ * SearchBar Component
+ * 
+ * A reusable search input component that allows users to filter data based on a search term.
+ * It immediately notifies the parent component of search input changes.
+ * 
+ * Props:
+ * - onSearch (function): Callback function invoked with the current search term on every change.
+ * - mode (boolean): Determines the theme (true for dark mode, false for light mode).
+ * 
+ * Features:
+ * - Real-time search input handling.
+ * - Clear button appears when text is entered, allowing for quick reset.
+ * - Styled for both dark and light modes.
+ */
+
+
 function SearchBar({ onSearch, mode }) {
   const [searchTerm, setSearchTerm] = useState('');
 

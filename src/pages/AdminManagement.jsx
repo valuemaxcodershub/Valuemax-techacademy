@@ -7,6 +7,43 @@ import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
+/**
+ * AdminManagement Component
+ * 
+ * This component provides an interface for managing admin users.
+ * It includes functionality to view, search, add, and navigate to edit admins.
+ * 
+ * Features:
+ * - Dark mode support based on localStorage theme preference
+ * - Admin list with search filtering
+ * - Modal form to add new admin with controlled inputs
+ * - Password visibility toggle for better UX
+ * - Dynamic table rendering with zebra striping based on theme
+ * 
+ * State Variables:
+ * - darkMode: Boolean — manages theme mode
+ * - filteredData: Array — filtered list of admins based on search
+ * - isModalOpen: Boolean — controls modal visibility
+ * - showPassword: Boolean — toggles password field visibility
+ * - email, username, password, role: Strings — controlled form values
+ * 
+ * Functions:
+ * - openModal(), closeModal(): Handle modal visibility
+ * - togglePasswordVisibility(): Toggle password field type
+ * - clearForm(): Reset form inputs
+ * - handleSubmit(): Handles form submission (logic placeholder)
+ * - handleSearch(): Filters admin list based on input
+ * 
+ * Dependencies:
+ * - Sidebar, AdminHeader, SearchBar, Modal (custom components)
+ * - React Router for navigation
+ * - FontAwesome icons for password visibility toggle
+ * 
+ * Notes:
+ * - Real submission logic should replace placeholder in `handleSubmit`
+ * - Admin data is loaded from a local `admins.json` file
+ */
+
 const AdminManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"

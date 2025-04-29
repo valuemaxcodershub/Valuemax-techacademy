@@ -6,6 +6,51 @@ import SearchBar from "../components/SearchBar";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 
+/**
+ * RoleManagement Component
+ * 
+ * This component serves as the admin interface for managing user roles.
+ * It allows administrators to:
+ * - View existing roles and their statuses.
+ * - Search through roles by name or status using a `SearchBar`.
+ * - Add new roles via a modal form.
+ * - Navigate to an edit page for individual roles.
+ * - (Planned) Delete existing roles.
+ * 
+ * Core Functionalities:
+ * - Theme toggle using `darkMode` state, saved to localStorage.
+ * - Modal form for role creation with fields: Name, Status, Job Description.
+ * - Search functionality to filter displayed roles.
+ * - Role list rendering in a styled table with edit/delete actions.
+ * 
+ * State Variables:
+ * - `darkMode`: Toggles between light and dark UI themes.
+ * - `filteredData`: Stores the currently filtered list of roles.
+ * - `isModalOpen`: Controls visibility of the modal for adding new roles.
+ * - `name`, `status`, `jobDescription`: Form field states for new roles.
+ * 
+ * Notable Functions:
+ * - `handleSearch(searchTerm)`: Filters the roles list by name/status.
+ * - `handleSubmit(event)`: Submits the role creation form (logic placeholder).
+ * - `clearForm()`: Resets form inputs.
+ * - `openModal()` / `closeModal()`: Control the modal visibility.
+ * 
+ * External Dependencies:
+ * - `Sidebar`, `AdminHeader`: Layout components.
+ * - `SearchBar`: Component for role search input.
+ * - `Modal`: Reusable modal for form display.
+ * - `roles.json`: Local file containing mock role data.
+ * - `useNavigate`: React Router navigation hook for redirection on edit.
+ * 
+ * TODOs:
+ * - Implement actual role submission logic.
+ * - Implement role deletion functionality.
+ * 
+ * Usage:
+ * This component is designed to be used as part of an admin dashboard.
+ * Ensure appropriate routing is set up for `/edit-role/:id` to handle editing.
+ */
+
 const RoleManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"

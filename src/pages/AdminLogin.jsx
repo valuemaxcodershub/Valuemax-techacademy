@@ -4,6 +4,35 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoIosPerson } from "react-icons/io";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
+/**
+ * AdminLogin Component
+ * 
+ * This component renders the login interface for admin users.
+ * It includes validation, password visibility toggling, and navigation on successful login.
+ * 
+ * Features:
+ * - Email and password input fields
+ * - Form validation with error messaging
+ * - Toggle to show/hide password
+ * - Navigation to admin dashboard upon valid submission
+ * - Basic styling structure with custom icons and layout
+ * 
+ * State Variables:
+ * - showPassword: boolean — toggles visibility of password field
+ * - formData: object — holds input values for username and password
+ * - errors: object — stores form validation error messages
+ * 
+ * Functions:
+ * - handleChange(): Updates form input state
+ * - validate(): Validates inputs (email format and password length)
+ * - handleSubmit(): Validates and navigates on success
+ * 
+ * Notes:
+ * - Uses React Router's `useNavigate` for redirecting after login
+ * - Placeholder navigation to `/admin` — replace with real auth flow
+ * - Error styling assumes a `.errormess` class is defined in CSS
+ */
+
 
 const AdminLogin = () => {
   const navigate = useNavigate()

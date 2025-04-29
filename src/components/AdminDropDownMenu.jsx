@@ -1,6 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+/**
+ * AdminDropDownMenu Component
+ * 
+ * This component renders a collapsible dropdown navigation menu for mobile views
+ * in the admin panel. It provides links to various admin routes.
+ * 
+ * Props:
+ * - darkMode (boolean): Determines if dark theme styles are applied.
+ * - toggleMobileMenu (function): Closes the dropdown after a link is clicked.
+ * 
+ * Features:
+ * - Mobile-friendly (hidden on screens larger than `sm`).
+ * - Dynamic styling based on `darkMode`.
+ * - All links navigate to relevant admin routes and trigger `toggleMobileMenu` on click.
+ * 
+ * Notes:
+ * - The "Generate ID Card" link is commented out; re-enable if needed.
+ * - Ensure consistent styling across themes using `menuLinkCss`.
+ */
+
+
 const AdminDropDownMenu = (props) => {
   const menuLinkCss ="block text-white text-left p-2 border-b border-b-slate-200";
     return (

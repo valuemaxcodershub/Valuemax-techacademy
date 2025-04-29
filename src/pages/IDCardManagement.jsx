@@ -5,6 +5,36 @@ import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/Modal";
 
+/**
+ * IDCardManagement Component
+ * 
+ * This component provides functionality for managing ID cards. It includes:
+ * - A table displaying a list of ID cards with the ability to download them.
+ * - A search bar for filtering the displayed ID cards by name or ID.
+ * - A modal for generating new ID cards.
+ * - A dark mode toggle to switch between dark and light themes.
+ * 
+ * The component interacts with `IDCard.json`, a JSON file that contains the list of ID cards, and allows the user to perform various operations related to ID cards.
+ * 
+ * State Management:
+ * - `darkMode`: Boolean state that tracks whether dark mode is enabled or not.
+ * - `filteredData`: Holds the filtered list of ID cards based on the search input.
+ * - `isModalOpen`: Boolean state that controls the visibility of the modal for generating a new ID card.
+ * 
+ * Dependencies:
+ * - `useState`, `useEffect`: React hooks for managing state and side effects.
+ * - `Sidebar`: A component used to display the sidebar navigation.
+ * - `AdminHeader`: The header component that includes a dark mode toggle.
+ * - `SearchBar`: A component that provides a search functionality for filtering ID cards.
+ * - `Modal`: A modal component that handles the creation of new ID cards.
+ * 
+ * Usage:
+ * - The user can click on the "Generate New ID Card" button to open a modal where they can select a course for ID card generation.
+ * - The search bar allows filtering the ID cards by name or ID.
+ * - The table displays a list of ID cards with an option to download each card by clicking the "Click" button.
+ * The component also handles dark mode by applying the appropriate classes to the HTML document based on the user's preference.
+ */
+
 const IDCardManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"

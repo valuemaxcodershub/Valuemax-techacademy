@@ -5,6 +5,44 @@ import AdminHeader from "../components/AdminHeader";
 import SearchBar from "../components/SearchBar";
 import { useNavigate } from "react-router";
 
+
+/**
+ * StudentManagement Component
+ * 
+ * Displays and manages a list of students, providing features such as:
+ * - Dark mode toggle based on localStorage preference.
+ * - Search/filter functionality across multiple student fields.
+ * - Navigation to "Add Student" form.
+ * - Responsive, styled student data table.
+ * 
+ * Dependencies:
+ * - students.json: Local JSON data of student records.
+ * - Sidebar, AdminHeader, SearchBar: Reusable UI components.
+ * - react-router: For navigation using useNavigate.
+ * 
+ * State Variables:
+ * - darkMode (boolean): Tracks if dark mode is enabled.
+ * - filteredData (array): Holds the currently filtered list of students.
+ * 
+ * Effects:
+ * - useEffect: Updates the theme on the root HTML element and saves it to localStorage.
+ * 
+ * Search Logic:
+ * - Filters student data by matching the search term with:
+ *   Name, StudentID, Course, Status, Payment, Age, or StartDate.
+ * 
+ * Rendered Elements:
+ * - AdminHeader: Displays the top bar with theme toggle.
+ * - Sidebar: Navigation sidebar.
+ * - "Add new Student" button: Navigates to the form for adding a student.
+ * - SearchBar: Input for filtering the student list.
+ * - Table: Displays student information responsively; some columns are hidden on small screens.
+ * 
+ * Notes:
+ * - Fix typo in className: "text-lef" → "text-left"
+ */
+
+
 const StudentManagement = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "darkMode"

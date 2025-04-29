@@ -7,6 +7,31 @@ import { Link, useNavigate } from "react-router-dom";
 import AdminDropDownMenu from "./AdminDropDownMenu";
 import Modal from "./Modal";
 
+
+/**
+ * AdminHeader Component
+ * 
+ * This component renders the top header for the admin dashboard interface.
+ * It includes branding, theme toggling, logout functionality, and a mobile menu toggle.
+ * 
+ * Props:
+ * - darkMode (boolean): Controls whether the dark theme is active.
+ * - setDarkMode (function): Toggles the darkMode state in the parent component.
+ * 
+ * Features:
+ * - Displays the company logo.
+ * - Includes a theme toggle button (sun/moon icons).
+ * - Provides logout functionality via a confirmation modal.
+ * - Includes a responsive hamburger menu (FaBars/FaClose) for mobile navigation.
+ * - Renders `AdminDropDownMenu` for mobile route access.
+ * 
+ * Notes:
+ * - `useNavigate` is used to redirect on logout.
+ * - Modal is a reusable component prompting for logout confirmation.
+ * - Styling changes based on `darkMode` prop.
+ */
+
+
 const AdminHeader = (props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
