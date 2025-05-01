@@ -91,9 +91,8 @@ const AdminManagement = () => {
       const filtered = admins.filter(
         (item) =>
           item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.Teacher.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.Duration.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.Price.toString().includes(searchTerm.toLowerCase())
+          item.ID.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.Role.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredData(filtered);
     }

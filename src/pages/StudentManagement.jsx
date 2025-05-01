@@ -58,7 +58,7 @@ const StudentManagement = () => {
       const filtered = students.filter(
         (item) =>
           item.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.StudentID.toString().includes(searchTerm.toLowerCase()) ||
+          item.ID.toString().includes(searchTerm.toLowerCase()) ||
           item.Course.toLowerCase().includes(searchTerm.toLowerCase()) ||
           item.Status.toLowerCase().includes(searchTerm.toLowerCase()) ||
           item.Payment.toLowerCase().includes(searchTerm.toLowerCase()) ||
