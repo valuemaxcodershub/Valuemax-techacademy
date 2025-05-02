@@ -671,7 +671,7 @@ body{
 
 
 .bg-admin-light {
-   background-image: url(../images/adminLightBG-1.jpg);
+   background-color: #fff;
    background-size: cover;
  }
  
