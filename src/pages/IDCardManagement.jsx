@@ -127,7 +127,7 @@ const IDCardManagement = () => {
           >
             <div className="grid justify-items-end">
               <button
-                className="bg-white text-black rounded-md py-2 px-3 mb-3 "
+                className="bg-slate-400 text-white rounded-md py-2 px-3 mb-3 "
                 onClick={openModal}
               >
                 Generate New ID Card
