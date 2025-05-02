@@ -24,7 +24,7 @@ const DashboardLinkButtons = (props) => {
   const dashboardBtnCss =
     "flex flex-col justify-center items-center min-w-[280px] w-full";
   const dashboardLinkCss =
-    "bg-slate-600 text-white rounded-xl poppins-regular shadow-md shadow-black min-w-[280px] hover:bg-slate-800 p-2 mr-4 mt-2 grow";
+    "bg-slate-600 text-white rounded-xl poppins-regular shadow-md shadow-black min-w-[280px] hover:bg-slate-800 hover:text-gray-200 p-2 mr-4 mt-2 grow";
   return (
     <Link to={props.destination} className={dashboardLinkCss}>
       <button className={dashboardBtnCss}>
