@@ -25,6 +25,8 @@ import { useState, useEffect } from 'react';
 import PrimaryButton from './PrimaryButton';
 import Course from './Course';
 import SecondaryButton from './SecondaryButton';
+import CallToAction from './CallToAction';
+import SearchBar from './SearchBar';
 
 const Courses = ({isHome = false}) => {
    const images = [
@@ -48,36 +50,48 @@ const Courses = ({isHome = false}) => {
       basic
    ]
    let courseListing = isHome ? courses.slice(0, 4) : courses
+
+   // this is to set course bases on search
+   const [filteredCourses, setFilteredCourses] = useState(courseListing);
+
+   // this handles search 
+   
+   const handleSearch = (searchTerm) => {
+      if (!searchTerm) {
+        setFilteredCourses(courseListing);
+      } else {
+        const filtered = courseListing.filter(
+          (course) =>
+            course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            course.description.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredCourses(filtered);
+      }
+    };
+
    console.log(courseListing);
-   // const [courseListing, setCourseListing] = useState([]);
+   console.log(filteredCourses);
 
-   // useEffect(() => {
-   //    const fetchCourses =  async () => {
-   //       const apiUrl = isHome ? "/api/courses?_limit=4" : "/api/courses"
-   //       try {
-   //          const res = await fetch(apiUrl);
-   //          const data = await res.json();
-   //          setCourseListing(data);
-   //       } catch (error) {
-   //          console.log("Error Fetching Data", error);
-   //       }
-   //    }
-   //    fetchCourses()
-   // }, [])
-   // console.log(courseListing);
-
+   
 
    return (
-      <div className='sides'>
-         <div className='courseSection'>
-            <h1>{isHome ? "Featured Courses" : "All Courses"}</h1>
-            <div className='inner'>
-               {courseListing.map((course, index) => (                  
-                  <Course course={course} key={course.id} index={index} images={images}/>
-               ))}
+      <>
+         <div className='sides'>
+            {!isHome && 
+               <div></div>
+            }
+            <div className='courseSection'>
+               <h1>{isHome ? "Featured Courses" : "All Courses"}</h1>
+               <SearchBar onSearch={handleSearch}/>
+               <div className='inner'>
+                  {filteredCourses.map((course, index) => (                  
+                     <Course course={course} key={course.id} index={index} images={images}/>
+                  ))}
+               </div>
             </div>
          </div>
-      </div>
+         {!isHome && <CallToAction/> }
+      </>
    )
 }
 

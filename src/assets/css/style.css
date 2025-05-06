@@ -1,6 +1,7 @@
 *{
    font-size: 18px;
    font-family: "Urbanist", sans-serif;
+   /* font-family: 'Exo', serif; */
    font-weight: 300;
    scroll-behavior: smooth;
 }
@@ -114,12 +115,16 @@ body{
 }  
 
 .header a:hover{
-   background: white;
-   color: white;
+   /* background: rgb(113, 113, 113); */
+   color: #F2B636;
 }
 .modal{
    z-index: 1000;
-   
+   /* background: red; */
+}
+.modal .inner-modal{
+   background-color: #0F1523;
+   box-sizing: border-box;
 }
 .modal form{
    margin: 0px auto;
@@ -131,6 +136,12 @@ body{
    display: flex;
    justify-content: center;
 
+}
+.modal .heading{
+   color: gainsboro;
+   *{
+      color: gainsboro;
+   }
 }
 .modal form input{
    width: 80%;
@@ -214,7 +225,7 @@ body{
    background-attachment: fixed;
 }
 .hero-box>div{
-   padding: 100px 0px ;
+   padding: 150px 0px ;
    width: 100%;
    /* height: 500px; */
    text-align: center;
@@ -311,20 +322,32 @@ body{
    display: flex;
    flex-direction: column;
    padding: 90px 0px 30px 0px;
+   /* background: red; */
 }
 .courseSection>h1{
-   margin: 0px 0px;
+   /* margin: 0px 0px; */
+   margin-bottom: 30px;
    font-size: 30px;
    font-weight: 600;
    text-align: center;
    color: gainsboro;
+}
+.courseSection>.searchbox{
+   color: gainsboro;
+}
+.courseSection>input{
+   margin: 20px 0px 10px 0px;
+   border: 2px solid gainsboro ;
+   border-radius: 30px;
+   padding: 10px 20px;
+   font-size: 20px;
 }
 .courseSection .inner{
    padding: 20px 0px;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   align-items: center;
+   /* align-items: center; */
    flex-wrap: wrap;
    margin: 10px 0px;
 }
@@ -335,10 +358,11 @@ body{
    border-radius: 5px;
    backdrop-filter: blur(10px);
    background: rgba(255, 255, 255, 0.03);
-   border: 2px solid rgb(188, 187, 187);
+   border: 1px solid rgb(188, 187, 187);
+   /* height: 450px; */
 
    .forimg{
-      background: red;
+      /* background: red; */
       width: 100%;
       height: 160px;
       img{
@@ -361,12 +385,12 @@ body{
 }
 
 .courseSection .inner .innerscroll{
-   height: fit-content;
-   max-height: 450px;
+   height: 450px;
+   max-height: fit-content;
    overflow-y: scroll;
    padding: 0px 5px 20px 5px;
    scrollbar-width: none;
-
+   /* background: red; */
    .see{
       color: #F2B636;
    }
@@ -437,7 +461,7 @@ body{
       height: 300px;
       max-height: fit-content;
       overflow-y: auto;
-      scrollbar-width: thin;
+      scrollbar-width: none;
 
       a{
          margin-top: 10px;
@@ -473,6 +497,53 @@ body{
 }
 /* TESTIMONIAL ENDS HERE */
 
+/* CALL TO ACTION STARTS HERE */
+.calltoaction{
+   /* background: repeating-radial-gradient(circle, #F2B636 30%, #0E1220 50%, #F2B636) ; */
+   background: linear-gradient(50deg, #4a3814, #F2B636) ;
+   padding: 50px 0px;
+   overflow: auto;
+   
+}
+.calltoaction>div{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+.calltoaction .action-box{
+   width: 50%;
+   /* background: red; */
+}
+.calltoaction .action-box h1{
+   font-family: 'Exo', serif;
+   font-weight: 600;
+   /* line-height: 50px;    */
+   font-size: 40px;
+}
+.callbutton{
+   width: fit-content;
+   margin: 20px auto 20px 0px;
+
+   .btn{
+      width: fit-content;
+      color: gainsboro;
+      background: #0E1220;
+      padding: 15px 25px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      text-decoration: none;
+   }
+}
+.calltoaction .ani{
+   background: blue;
+   width: 40px;
+   height: 40px;
+   border-radius: 100%;
+}
+/* CALL TO ACTION ENDS HERE */
+
 /* STUDENT LOGIN STARTS HERE */
 .studentlog{
    width: 100%;
@@ -481,10 +552,10 @@ body{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   background-image: url(../images/log-wp5.jpg);
+   background-image: url(../images/log-wp6.jpg);
    background-size: cover;
    background-repeat: no-repeat;
-   background-position: 100%;
+   background-position: left;
 }
 .studenthead{
    padding: 20px 0px;
@@ -504,7 +575,7 @@ body{
    font-weight: 600;
    font-size: 40px;
    text-align: center;
-   color: #0E1220;
+   color: gainsboro;
 }
 .studentlog form{
    display: flex;
@@ -536,7 +607,9 @@ body{
    text-align: right;
    text-decoration: underline;
 
+   color: #F2B636;
    a{
+      color: #F2B636;
       font-size: 13px;
    }
 }
@@ -552,9 +625,11 @@ body{
 .studentlog p{
    text-align: center;
    font-size: 13px;
+   color: gainsboro;
    a{
       font-size: 13px;
       text-decoration: underline;
+      color: #F2B636;
    }
 }
 .studentlog .errormess{
@@ -568,7 +643,9 @@ body{
    text-align: center;
    line-height: 50px;
    background-color: #0E1220;
+   color: gainsboro;
 }
+
 /* STUDENTS LOGIN ENDS HERE  */
 
 /*FOOTER STARTS HERE*/

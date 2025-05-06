@@ -28,7 +28,7 @@ function SearchBar({ onSearch, mode }) {
   };
 
   return (
-    <div className={ mode ? "flex items-center border rounded-md p-2 w-full text-white" : "flex items-center border rounded-md p-2 w-full text-black"}>
+    <div className={ mode ? "searchbox flex items-center border rounded-md p-2 w-full text-white" : "searchbox flex items-center border rounded-md p-2 w-full text-black"}>
       <input
         type="text"
         placeholder="Search..."

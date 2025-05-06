@@ -41,10 +41,7 @@ function App() {
       <Route path="/course-management" element={<CourseManagement />} />
       <Route path="/admin-management" element={<AdminManagement />} />
       <Route path="/role-management" element={<RoleManagement />} />
-      <Route
-        path="/certificate-management"
-        element={<CertificateManagement />}
-      />
+      <Route path="/certificate-management" element={<CertificateManagement />} />
       <Route path="/id-card-management" element={<IDCardManagement />} />
       <Route path="/personal-id-card" element={<PersonalIDCard />} />
       <Route path="/add-student" element={<AddStudent />} />

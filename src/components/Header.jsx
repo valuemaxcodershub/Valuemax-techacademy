@@ -6,6 +6,7 @@ import logo from "../assets/images/logo44.png"
 import { FaArrowDown, FaBars, FaTimes } from "react-icons/fa";"use client";
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "flowbite-react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import PrimaryButton from './PrimaryButton';
 
 
 const Header = () => {
@@ -62,16 +63,19 @@ const Header = () => {
       
 
       <Modal dismissible show={openModal} onClose={() => setOpenModal(false)} className='modal'>
-        <ModalHeader className='font-semibold'>Verify Past Students' Certificates  </ModalHeader>
-        <ModalBody>
-         <form action="">
-            <input type="text" placeholder='Verify past students'/>
-            <button type='submit'>Verify</button>
-         </form>
-        </ModalBody>
-        <ModalFooter>
-          <Button onClick={() => setOpenModal(false)}>Close</Button>
-        </ModalFooter>
+        <div className='inner-modal'> 
+         <ModalHeader className='font-semibold heading'>Verify Past Students' Certificates  </ModalHeader>
+         <ModalBody>
+            <form action="">
+               <input type="text" placeholder='Verify past students'/>
+               <button type='submit'>Verify</button>
+            </form>
+         </ModalBody>
+         <ModalFooter>
+            <PrimaryButton func={() => setOpenModal(false)} marginLeft={'0px'} text={'Close'}/>
+            {/* <Button onClick={() => setOpenModal(false)} className='footclose'>Close</Button> */}
+         </ModalFooter>
+        </div>
       </Modal>
 
    

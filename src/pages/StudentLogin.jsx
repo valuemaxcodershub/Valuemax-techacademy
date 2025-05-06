@@ -90,12 +90,12 @@ const StudentLogin = () => {
             {/* password error */}
             {errors &&  <span className='errormess'>{errors.password}</span> }
             <div className='forget'>
-               <Link>Forgotten password?</Link>
+               <Link to='/forget-password'>Forgotten password?</Link>
             </div>
             <button type='submit'>Login</button>
          </form>
          <p>
-            Don't have an account <Link to='/register'>Register</Link>
+            Don't have an account? <Link to='/register'>Register</Link>
          </p>
       </div>
       <div className='logfooter'>
